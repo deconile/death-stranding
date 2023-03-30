@@ -15,6 +15,9 @@
     --gray-800:#222;
     --gray-900:#000;
 
+    /* OVERLAY */
+    --overlay-dark:#333C;
+    --overlay-light:#E2E2E2CC;
 
     /* STRUCTURE */
     --rounded:4px;
@@ -43,7 +46,14 @@ section {
 
 .limited {
     max-width:1200px;
+    height:100%;
     margin:auto;
+}
+
+.overlay {
+    width:100%;
+    height:100%;
+    background-color:var(--overlay-dark);
 }
 
 
@@ -58,10 +68,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {font-size:2.2em;}
 h4 {font-size:1.2em;}
-h5 {font-size:1em;}
+h5 {font-size:0.9em;font-weight:400;}
 
 p {
-    line-height:1.8em;
+    line-height:2em;
 }
 
 ul {
