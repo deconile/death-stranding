@@ -15,13 +15,6 @@
     --gray-800:#222;
     --gray-900:#000;
 
-    /* OVERLAY */
-    --overlay-dark:#333C;
-    --overlay-light:#E2E2E2CC;
-
-    /* STRUCTURE */
-    --rounded:4px;
-
 }
 
 
@@ -40,8 +33,11 @@ html, body {
 }
 
 section {
-    padding:128px 32px;
     background-size:cover;
+}
+
+section .container {
+    padding:128px 64px;
 }
 
 .limited {
@@ -53,8 +49,10 @@ section {
 .overlay {
     width:100%;
     height:100%;
-    background-color:var(--overlay-dark);
+    background-color:#3339;
 }
+
+
 
 
 /* TEXT */
