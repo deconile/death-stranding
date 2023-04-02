@@ -1,4 +1,23 @@
 #hero {
     background-image: url("../images/home-hero.jpg");
     height: 100vh;
+    background-position: center bottom;
+}
+
+#hero > div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#hero .content {
+    position: relative;
+    width: 60%;
+    height: auto;
+}
+
+#hero .absolute {
+    display: flex;
+    bottom: 0;
+    width: 100%;
 }

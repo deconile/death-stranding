@@ -1,0 +1,41 @@
+
+
+
+
+
+/* BUTTONS */
+.button {
+
+}
+
+.button a {
+    display: block;
+    padding: 16px 64px;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    background-color: var(--overlay-dark);
+    border-radius: 8px;
+    text-decoration: none;
+    font-variant: small-caps;
+    font-weight: 600;
+    transition: 500ms;
+}
+
+.button a:hover {
+    background-color: var(--primary);
+    color: var(--gray-800);
+}
+
+
+
+
+
+
+
+
+
+
+/* IMAGE REVEAL */
+.image-reveal {
+
+}
