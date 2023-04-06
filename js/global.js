@@ -36,5 +36,4 @@ function navBar() {
             link.classList.add('active');
         }
     })
-
 };
