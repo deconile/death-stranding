@@ -34,7 +34,5 @@ function navBar() {
             // Add the active class if the statement is true
             link.classList.add('active');
         }
-    })
     });
-
 };

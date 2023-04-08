@@ -14,8 +14,15 @@
 
 #hero .content {
     position: relative;
-    width: 60%;
-    height: auto;
+}
+
+#hero .title {
+    position: absolute;
+    bottom:0%;
+    left:50%;
+    transform: translateX(-50%);
+    width:50%;
+    height:500px;
 }
 
 #hero .absolute {
@@ -28,8 +35,7 @@
 
 #story {
     background-image: url("../images/about-hero.jpg");
-    background-position: 0 20%;
-    background-size: 120%;
+    background-attachment: fixed;
     height:100%;
 }
 
@@ -42,7 +48,7 @@
 /* PURCHASE ***************************/
 
 #purchase {
-    background-image: url("../images/carousel-3.jpg");
+    background-image: url("../images/purchase-bg-1.jpg");
 }
 
 #purchase .content {
