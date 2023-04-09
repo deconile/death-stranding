@@ -8,7 +8,6 @@ $(document).ready(function(){
 
 //RUN ON PAGE LOADED
 $(window).on('load',function(){
-
 });
 
 
@@ -35,5 +34,5 @@ function navBar() {
             // Add the active class if the statement is true
             link.classList.add('active');
         }
-    })
+    });
 };
