@@ -2,33 +2,26 @@
 
 #hero {
     background-image: url("../images/home-hero.jpg");
-    height: 100vh;
     background-position: center bottom;
 }
 
-#hero > div {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
 
 #hero .content {
     position: relative;
 }
 
 #hero .title {
-    position: absolute;
-    bottom:0%;
-    left:50%;
-    transform: translateX(-50%);
     width:50%;
     height:500px;
 }
 
 #hero .absolute {
-    display: flex;
     bottom: 0;
     width: 100%;
+}
+
+#hero .cta {
+    padding-bottom: 64px;
 }
 
 /* STORY ********************************/
@@ -36,11 +29,12 @@
 #story {
     background-image: url("../images/about-hero.jpg");
     background-attachment: fixed;
-    height:100%;
+    background-position:center left;
 }
 
 #story .content{
     width: 40%;
+    min-width:500px;
     height: auto;
 }
 
@@ -51,8 +45,23 @@
     background-image: url("../images/purchase-bg-1.jpg");
 }
 
-#purchase .content {
-    display: flex;
-    justify-content: center;
+#purchase .container {
     gap: 128px;
+}
+
+
+/* CLOSER ***************************/
+#closer {
+    background-image: url("../images/cover-bike.jpg");
+    background-position:bottom center;
+    background-attachment:fixed;
+}
+
+#closer .absolute {
+    top:20%;
+    right:0;
+}
+
+#closer .title {
+    width:70%;
 }

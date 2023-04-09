@@ -50,18 +50,22 @@ section {
     background-position:center;
 }
 
+section.full {height:100%;}
+section.parallax {background-attachment: fixed;}
+
 section .container {
-    padding:128px;
+    position:relative;
     display:flex;
+    padding:128px;
 }
 
 section .container.left {justify-content: left;}
 section .container.center {justify-content: center;}
 section .container.right {justify-content: right;}
 
-section .container.top {align-items: top;}
+section .container.top {align-items: flex-start;}
 section .container.middle {align-items: center;}
-section .container.bottom {align-items: bottom;}
+section .container.bottom {align-items: flex-end;}
 
 section .content {
     width:100%;
@@ -71,6 +75,7 @@ section .content {
 }
 
 .limited {
+    width:100%;
     max-width:1200px;
     height:100%;
     margin:auto;
@@ -91,16 +96,21 @@ section .content {
 }
 
 .overlay.top {
-    background-image:linear-gradient(to bottom, #000C 10%,#0000 60%);
+    background-image:linear-gradient(to bottom, #000C 0%,#0000 50%);
 }
 
 .overlay.bottom {
-    background-image:linear-gradient(to top, #000C 10%,#0000 60%);
+    background-image:linear-gradient(to top, #000C 0%,#0000 50%);
 }
 
 
 .absolute {
     position: absolute;
+}
+
+.absolute.center {
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -123,6 +133,12 @@ p {
 
 ul {
     margin:0;
+}
+
+.legal {
+    font-size: 0.7em;
+    color:var(--gray-500);
+    font-weight:600;
 }
 
 
@@ -182,11 +198,10 @@ nav ul li a:hover, nav ul li a.active {
 .cta {
     display: inline-grid;
     gap: 16px;
-    padding-bottom: 32px;
-    margin: auto;
+    margin: 0 auto;
 }
 
-.cta .logos {
+.logos {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -194,4 +209,25 @@ nav ul li a:hover, nav ul li a.active {
 
 .logos img {
     height: 48px;
+    max-width: 160px;
+    object-fit: contain;
+}
+
+
+/* FOOTER *****************************************/
+
+footer {
+    padding:64px;
+    background-color:var(--gray-900);
+}
+
+footer > div {
+    display:grid;
+    justify-content: center;
+    gap:32px;
+}
+
+.rating {
+    width:200px;
+    margin:0 auto;
 }
