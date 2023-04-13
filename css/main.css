@@ -52,7 +52,7 @@ section {
 
 section.full {height:100%;}
 section.parallax {background-attachment: fixed;}
-
+ 
 section .container {
     position:relative;
     display:flex;
@@ -103,6 +103,9 @@ section .content {
     background-image:linear-gradient(to top, #000C 0%,#0000 50%);
 }
 
+.overflow {
+    overflow: hidden;
+}
 
 .absolute {
     position: absolute;
@@ -164,7 +167,7 @@ nav .logo {
 
 nav .logo img {
     width: 150px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 nav ul {
