@@ -40,7 +40,9 @@ function navBar() {
     // Grab path name through current location on the document
     const activePage = window.location.pathname;
     // Using a const var to query select all anchors in nav and loop through each one
-    if (window.location.pathname == activePage) {
+    if (activePage == "/death-stranding/") {
+        $('nav ul li:first-child').addClass('active');
+    } else {
         const navLinks = document.querySelectorAll('nav a').forEach(link => {
             // Check to see if the link href has the activePage
             if(link.href.includes(`${activePage}`)){
@@ -48,8 +50,6 @@ function navBar() {
                 link.classList.add('active');
             }
         });
-    } else {
-        $('nav ul li:first-child').addClass('active');
     }
 };
 
