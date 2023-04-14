@@ -49,7 +49,7 @@ function navBar() {
             }
         });
     } else {
-        const navLinks = document.parent('nav').find('li').first().addClass('active');
+        $('nav').find('li').first().addClass('active');
     }
 };
 
