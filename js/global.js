@@ -37,8 +37,6 @@ function navBar() {
         $('nav').find('ul').append(temp);
     }
 
-    $('nav ul li:first-child').addClass('active');
-
     // Grab path name through current location on the document
     const activePage = window.location.pathname;
     // Using a const var to query select all anchors in nav and loop through each one
@@ -47,6 +45,8 @@ function navBar() {
         if(link.href.includes(`${activePage}`)){
             // Add the active class if the statement is true
             link.classList.add('active');
+        } else {
+            $('nav ul li:first-child').addClass('active');
         }
     });
 };
