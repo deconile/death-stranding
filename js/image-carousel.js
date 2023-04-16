@@ -1,0 +1,84 @@
+
+
+$(window).on('load', function(){
+    setPagination();
+    carousel();
+});
+
+$(window).on('resize', function(){
+
+});
+
+
+// SET PAGINATION
+function setPagination(){
+    $('.pagination').each(function() {
+        var amt = $(this).parents('.carousel').find('.overflow').children().length;
+        for(i = 0; i < amt; i++){
+            $(this).find('.bubbles').append(`<div><div class="nav"></div></div>`);
+        }
+        $(this).attr('data-page-curr',0);
+        $(this).attr('data-pages',amt - 1);
+        $(this).find('.bubbles').children().first().addClass('active');
+        $(this).find('.bubbles').children().eq(1).addClass('jux');
+    });
+    
+}
+
+
+
+function carousel(){
+
+    let ctrl = $('.pagination').find('.nav');
+    let prev = $('.pagination').find('.prev');
+    let next = $('.pagination').find('.next');
+    let bubble = $('.pagination').find('.bubbles').children();
+
+    prev.addClass('inactive');
+
+    prev.on('click', function(){
+        let page = $(this).parent().attr('data-page-curr');
+        page--;
+        $(this).parent().attr('data-page-curr', page);
+    });
+
+    next.on('click', function(){
+        let page = $(this).parent().attr('data-page-curr');
+        page++;
+        $(this).parent().attr('data-page-curr', page);
+    });
+
+    // Controls
+    ctrl.on('click', function() {
+        let curr;
+        if($(this).parent().parent().hasClass('bubbles')){
+            curr = $(this).parent().index();
+            $(this).parents('.pagination').attr('data-page-curr', curr);
+        } else {
+            curr = parseInt($(this).parents('.pagination').attr('data-page-curr'));
+        }
+        let amt = parseInt($(this).parents('.pagination').attr('data-pages'));
+        let prev = $(this).parents('.pagination').find('.prev');
+        let next = $(this).parents('.pagination').find('.next');
+        let bubble = $(this).parents('.pagination').find('.bubbles').children();
+
+        if (curr <= 0){
+            prev.addClass('inactive');
+            next.removeClass('inactive');
+        } else if (curr >= amt) {
+            prev.removeClass('inactive');
+            next.addClass('inactive');
+        } else {
+            prev.removeClass('inactive');
+            next.removeClass('inactive');
+        }
+
+        bubble.removeClass('active jux');
+        bubble.eq(curr).addClass('active');
+        bubble.eq(curr + 1).addClass('jux');
+        if (curr > 0){
+            bubble.eq(curr - 1).addClass('jux');
+        }
+    });
+
+}

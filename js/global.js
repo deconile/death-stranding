@@ -45,19 +45,6 @@ function navBar() {
     if(!$('nav').find('li').find('a').hasClass('active')){
         $('nav').find('li').first().find('a').addClass('active');
     }
-
-    // // Grab path name through current location on the document
-    // const activePage = window.location.pathname;
-    // // Using a const var to query select all anchors in nav and loop through each one
-    // const navLinks = document.querySelectorAll('nav a').forEach(link => {
-    //     // Check to see if the link href has the activePage
-    //     if(link.href.includes(`${activePage}`)){
-    //         // Add the active class if the statement is true
-    //         link.classList.add('active');
-    //     } else {
-    //         $('nav ul li:first-child').addClass('active');
-    //     }
-    // });
 };
 
 function footer(){

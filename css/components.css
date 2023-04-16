@@ -94,6 +94,7 @@
     height:32px;
     transform: rotateZ(-45deg);
 }
+
 .control > div {
     width:100%;
     height:100%;
@@ -103,8 +104,17 @@
     border-top:15px solid transparent;
 }
 
+.control.inactive {
+    pointer-events: none;
+    opacity: 0.25;
+}
+
 .control.prev {
     transform: rotateZ(135deg);
+}
+
+.nav {
+    cursor:pointer;
 }
 
 .bubbles {
@@ -118,6 +128,7 @@
 .bubbles > div {
     display: flex;
     align-items: center;
+    transition:500ms;
 }
 
 .bubbles > div > div {
@@ -125,6 +136,7 @@
     height: 24px;
     border: 1px solid var(--gray-500);
     border-radius: 12px;
+    transition:500ms;
 }
 
 .bubbles > div.active {
@@ -163,25 +175,6 @@
 
 
 
-/* IMAGE REVEAL */
-.image-reveal {
-    overflow:hidden;
-    height:100%;
-    transition: 1000ms;
-}
-
-.image-reveal.hidden {
-    height:0%;
-}
-
-.image-reveal img {
-    width:100%;
-    height:100%;
-    object-fit: cover;
-    object-position: top center;
-}
-
-
 /* IMAGE CAROUSEL */
 
 #image-carousel .container {
@@ -205,6 +198,11 @@
     position: absolute;
     top:0;
     left:0;
+    transition:1000ms;
+}
+
+#image-carousel .images > div.out {
+    top:100%;
 }
 
 #image-carousel .pagination {
@@ -218,12 +216,24 @@
     justify-content: center;
     gap: 16px;
     padding: 128px;
+    padding-bottom:64px;
 }
 
 
+/* IMAGE REVEAL */
+.image-reveal {
+    overflow:hidden;
+    height:100%;
+    transition: 1000ms;
+}
 
+.image-reveal.hidden {
+    height:0%;
+}
 
-
-
-
-
+.image-reveal img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: top center;
+}
