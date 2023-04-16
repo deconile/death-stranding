@@ -31,24 +31,33 @@ function navBar() {
 
     let titles = ['Home','About','Buy Now','Media','Blog','Community'];
     let urls = ['index.html','about.html','buy-now.html','media.html','blog.html','community.html'];
+    let loc = window.location.href.split('/');
+    loc = loc[loc.length - 1];
     
     for(i = 0; i < titles.length; i++){
-        let temp = `<li><a href="${urls[i]}" class="navLinks">${titles[i]}</a></li>`
+        let temp = `<li><a href="${urls[i]}">${titles[i]}</a></li>`
         $('nav').find('ul').append(temp);
+        if(loc === urls[i]){
+            $('nav').find('li').eq(i).find('a').addClass('active');
+        }
     }
 
-    // Grab path name through current location on the document
-    const activePage = window.location.pathname;
-    // Using a const var to query select all anchors in nav and loop through each one
-    const navLinks = document.querySelectorAll('nav a').forEach(link => {
-        // Check to see if the link href has the activePage
-        if(link.href.includes(`${activePage}`)){
-            // Add the active class if the statement is true
-            link.classList.add('active');
-        } else {
-            $('nav ul li:first-child').addClass('active');
-        }
-    });
+    if(!$('nav').find('li').find('a').hasClass('active')){
+        $('nav').find('li').first().find('a').addClass('active');
+    }
+
+    // // Grab path name through current location on the document
+    // const activePage = window.location.pathname;
+    // // Using a const var to query select all anchors in nav and loop through each one
+    // const navLinks = document.querySelectorAll('nav a').forEach(link => {
+    //     // Check to see if the link href has the activePage
+    //     if(link.href.includes(`${activePage}`)){
+    //         // Add the active class if the statement is true
+    //         link.classList.add('active');
+    //     } else {
+    //         $('nav ul li:first-child').addClass('active');
+    //     }
+    // });
 };
 
 function footer(){
