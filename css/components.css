@@ -123,12 +123,23 @@
     display: flex;
     gap: 8px;
     justify-content: center;
+    transition:2000ms;
 }
 
 .bubbles > div {
     display: flex;
+    justify-content: center;
     align-items: center;
-    transition:500ms;
+    width:24px;
+    transition:1000ms;
+}
+
+.bubbles > div.active {
+    width:100%;
+}
+
+.bubbles > div.jux {
+    width:25%;
 }
 
 .bubbles > div > div {
@@ -136,14 +147,8 @@
     height: 24px;
     border: 1px solid var(--gray-500);
     border-radius: 12px;
-    transition:500ms;
-}
-
-.bubbles > div.active {
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    transition:1000ms;
+    transform:rotateZ(-90deg);
 }
 
 .bubbles > div.active > div {
@@ -152,9 +157,8 @@
     border-color: var(--gray-100);
     background-color: #fff9;
     border-radius: 0;
-    transform: rotateZ(45deg);
+    transform: translateY(-48px) rotateZ(-45deg);
     position: relative;
-    top: -12px;
 }
 
 .bubbles > div.jux > div {
@@ -163,15 +167,25 @@
     background-color: #6669;
     border-color: #999;
     border-radius: 8px;
+
 }
 
 .bubbles > div.jux > div {
-    transform: rotateZ(65deg);
+    transform: translateY(-24px) rotateZ(-65deg);
+}
+
+.bubbles > div.active + .jux {
+    /* justify-content: left; */
 }
 
 .bubbles > div.active + .jux > div {
-    transform: rotateZ(15deg);
+    transform: translateY(-24px) rotateZ(-15deg);
 }
+
+.bubbles > div.active + .jux + div > div {
+    transform: rotateZ(0deg);
+}
+
 
 
 
@@ -187,6 +201,10 @@
 #image-carousel .images img {
     width: 100%;
     height: 100%;
+}
+
+#image-carousel .images {
+    z-index: -1;
 }
 
 #image-carousel .images img {
@@ -217,6 +235,7 @@
     gap: 16px;
     padding: 128px;
     padding-bottom:64px;
+    z-index: 1;
 }
 
 

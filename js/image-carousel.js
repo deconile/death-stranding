@@ -3,6 +3,7 @@
 $(window).on('load', function(){
     setPagination();
     carousel();
+    imageOrder();
 });
 
 $(window).on('resize', function(){
@@ -79,6 +80,34 @@ function carousel(){
         if (curr > 0){
             bubble.eq(curr - 1).addClass('jux');
         }
+
+
+        //ONLY FOR IMAGE CAROUSEL
+        if($(this).parents().is('#image-carousel')){
+            let image = $('#image-carousel').find('.images').children();
+            
+            if($(this).hasClass('prev') || $(this).hasClass('next')){
+                if(curr > 0){
+                    image.eq(curr - 1).addClass('out');
+                }
+                image.eq(curr).removeClass('out');
+            } else {
+                image.removeClass('out');
+                for(i = 0; i < curr; i++){
+                    image.eq(i).addClass('out');
+                }
+            }
+        }
     });
 
+}
+
+function imageOrder(){
+    let image = $("#image-carousel").find(".images").children();
+
+    for(i = image.length; i >= 0; i--){
+        image.eq(i).css("z-index", image.length - i);
+    }
+    
+    
 }
