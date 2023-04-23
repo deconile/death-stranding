@@ -65,3 +65,8 @@
 #closer .title {
     width:70%;
 }
+
+#blog-carousel .container {
+    display: grid;
+    padding: 128px 0;
+}

@@ -14,7 +14,7 @@ $(window).on('resize', function(){
 // SET PAGINATION
 function setPagination(){
     $('.pagination').each(function() {
-        var amt = $(this).parents('.carousel').find('.overflow').children().length;
+        var amt = $(this).parents('.carousel').find('.content').children().length;
         for(i = 0; i < amt; i++){
             $(this).find('.bubbles').append(`<div><div class="nav"></div></div>`);
         }

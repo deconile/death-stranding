@@ -86,7 +86,16 @@
 
 /* CAROUSELS ********************************/
 
+
+
 /* PAGINATION */
+.pagination {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 16px;
+    padding: 128px 64px 0;
+}
 
 .control {
     border:1px solid #fff;
@@ -236,6 +245,21 @@
     padding: 128px;
     padding-bottom:64px;
     z-index: 1;
+}
+
+#blog-carousel .blog {
+    overflow-x: auto;
+    display: flex;
+    gap: 32px;
+    padding: 0 calc(50% - 462px);
+}
+
+#blog-carousel .blog::-webkit-scrollbar {
+    display:none;
+}
+
+#blog-carousel .blog .content-box {
+    min-width: 430px;
 }
 
 
