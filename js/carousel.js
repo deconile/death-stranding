@@ -2,6 +2,7 @@
 
 $(window).on('load', function(){
     setPagination();
+    getCarouselContents();
     carousel();
     imageOrder();
 });
@@ -20,10 +21,16 @@ function setPagination(){
         }
         $(this).attr('data-page-curr',0);
         $(this).attr('data-pages',amt - 1);
+
+        if($(this).parents().is('#blog-carousel')){
+            $(this).find('.bubbles').children().last().remove();
+            $(this).attr('data-pages', amt - 2);
+        }
+
         $(this).find('.bubbles').children().first().addClass('active');
         $(this).find('.bubbles').children().eq(1).addClass('jux');
     });
-    
+
 }
 
 
@@ -81,7 +88,13 @@ function carousel(){
             bubble.eq(curr - 1).addClass('jux');
         }
 
+        // SLIDE CAROUSEL
+        let width = parseInt($(this).parents('.carousel').attr('data-width'));
+        let content = $(this).parents('.carousel').find('.content');
+        
+        content.scrollLeft(width * curr);
 
+        
         //ONLY FOR IMAGE CAROUSEL
         if($(this).parents().is('#image-carousel')){
             let image = $('#image-carousel').find('.images').children();
@@ -98,6 +111,9 @@ function carousel(){
                 }
             }
         }
+
+
+
     });
 
 }
@@ -108,6 +124,17 @@ function imageOrder(){
     for(i = image.length; i >= 0; i--){
         image.eq(i).css("z-index", image.length - i);
     }
-    
-    
+
+}
+
+
+function getCarouselContents(){
+    $('.carousel').each(function(){
+        let w = $(this).find('.content').children().first().outerWidth();
+        let g = parseInt($(this).find('.content').css('gap'));
+        if(isNaN(g)) {
+            g = 0;
+        }
+        $(this).attr('data-width', w + g);
+    });
 }
