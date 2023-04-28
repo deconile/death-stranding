@@ -9,6 +9,8 @@
 
     --gray-000:#fff;
     --gray-100:#E2E2E2;
+    --gray-200:#CCC;
+    --gray-300:#A5A5A5;
     --gray-400:#999;
     --gray-500:#6C6C6C;
     --gray-700:#333;
@@ -41,9 +43,7 @@ html, body {
     box-sizing: border-box;
 }
 
-img {
-    width:100%;
-}
+img {width:100%;}
 
 section {
     background-size:cover;
@@ -103,13 +103,9 @@ section .content {
     background-image:linear-gradient(to top, #000C 0%,#0000 50%);
 }
 
-.overflow {
-    overflow: hidden;
-}
-
-.absolute {
-    position: absolute;
-}
+.overflow {overflow: hidden;}
+.absolute {position: absolute;}
+.fixed {background-attachment: fixed;}
 
 .absolute.center {
     display: flex;
@@ -127,6 +123,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {font-size:2.2em;}
+h2 {font-size:1.8em;}
+h3 {font-size:1.5em;}
 h4 {font-size:1.2em;}
 h5 {font-size:0.9em; font-weight:400;}
 
@@ -146,8 +144,6 @@ ul {
 
 
 /* NAVIGATION *****************************************************/
-
-
 
 nav {
     display: grid;
