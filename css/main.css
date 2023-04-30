@@ -111,6 +111,9 @@ section .content {
     display: flex;
     justify-content: center;
 }
+.center {
+    margin:0 auto;
+}
 
 
 /* SPACING */

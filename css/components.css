@@ -84,6 +84,55 @@
 }
 
 
+/* CARDS */
+
+.card {
+    
+}
+
+.flip {
+    position: relative;
+    transform: perspective(1500px) rotateY(-180deg);
+    transform-style: preserve-3d;
+    transition: 1000ms;
+}
+
+.card.active .flip {
+    transform: perspective(1500px) rotateY(0deg);
+}
+
+.card.active ~ .card:not(.active) .flip {
+    transform: perspective(1500px) rotateY(180deg);
+}
+
+.card .front, .card .back {
+    backface-visibility: hidden;
+}
+
+.card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border:  1px solid var(--gray-500);
+    background-image: linear-gradient(var(--gray-800), var(--gray-900));
+    transform: rotateY(180deg);
+}
+
+.card .back img {
+    width: 50%;
+}
+
+.card .flip .content-box {
+    box-shadow: none;   
+}
+
+
+
 /* IMAGE REVEAL */
 .image-reveal {
     overflow:hidden;

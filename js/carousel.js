@@ -3,6 +3,7 @@
 $(window).on('load', function(){
     setPagination();
     getCarouselContents();
+    setBlogCarousel();
     carousel();
     imageOrder();
 });
@@ -91,7 +92,6 @@ function carousel(){
         // SLIDE CAROUSEL
         let width = parseInt($(this).parents('.carousel').attr('data-width'));
         let content = $(this).parents('.carousel').find('.content');
-        
         content.scrollLeft(width * curr);
 
         
@@ -112,21 +112,25 @@ function carousel(){
             }
         }
 
+        //ONLY FOR BLOG CAROUSEL
+        if($(this).parents().is('#blog-carousel')){
+            let card = $('#blog-carousel').find('.card');
+
+            card.removeClass('active');
+            card.eq(curr).addClass('active');
+            card.eq(curr + 1).addClass('active');
+        }
 
 
     });
-
 }
 
 function imageOrder(){
     let image = $("#image-carousel").find(".images").children();
-
     for(i = image.length; i >= 0; i--){
         image.eq(i).css("z-index", image.length - i);
     }
-
 }
-
 
 function getCarouselContents(){
     $('.carousel').each(function(){
@@ -137,4 +141,11 @@ function getCarouselContents(){
         }
         $(this).attr('data-width', w + g);
     });
+}
+
+function setBlogCarousel(){
+    let card = $('#blog-carousel').find('.card');
+
+    card.eq(0).addClass('active');
+    card.eq(1).addClass('active');
 }
