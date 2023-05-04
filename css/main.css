@@ -13,11 +13,17 @@
     --gray-300:#A5A5A5;
     --gray-400:#999;
     --gray-500:#6C6C6C;
+    --gray-600:#525252;
     --gray-700:#333;
     --gray-800:#222;
     --gray-900:#000;
-
+    
     --overlay-dark: #000d;
+
+    --text-xl: 22px;
+    --text-lg: 20px;
+    --text-sm: 12px;
+    --text-xs: 10px;
 
 }
 

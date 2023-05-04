@@ -84,7 +84,34 @@
 }
 
 
-/* CARDS */
+/* TEXT */
+
+.content-box .text {
+    padding: 32px;
+    display: grid;
+    gap: 32px;
+    background-color:var(--gray-700);
+}
+
+.content-box .text .para {
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+.content-box .text .stamp {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+    font-weight: 600;
+    text-transform: uppercase;
+    border-top: 1px solid var(--gray-400);
+    padding-top: 16px;
+}
+
+
+/* CARDS ********************************************/
 
 .card {
     
@@ -133,7 +160,7 @@
 
 
 
-/* IMAGE REVEAL */
+/* IMAGE REVEAL *************************************/
 .image-reveal {
     overflow:hidden;
     height:100%;
