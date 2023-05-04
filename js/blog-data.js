@@ -1,19 +1,64 @@
+$(document).ready(function(){
+    blogPosts();
+});
 
 
+function blogPosts() {
+    const blog = blogs.map((obj, index) => {
+        const { title, image, detail, author, date, time } = obj;
+    
+        return $('.blog-content').append(`
+            <div class="card">
+                <div class="flip">
+                    <div class="content-box front">
+                        <div class="label">${title}</div>
+                        <div class="image"><img src="${image}" /></div>
+                        <div class="text">
+                            <div class="para">
+                                <p>${detail}</p>
+                            </div>
+                            <div class="stamp">
+                                <div class="author">by ${author}</div>
+                                <div class="time">on ${date} | ${time}</div>
+                            </div>
+                        </div>
+                        <div class="button"><a href="">Buy Director's Cut</a></div>
+                    </div>
+                    <div class="back">
+                        <img src="images/logos/logo-drip-white.png" />
+                    </div>
+                </div>
+            </div>
+        `)
+    });
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+let blogs = [
+    {
+        title: "Death Stranding : Director's Cut",
+        image: "images/cover-dc.jpg",
+        detail: "Fragile ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ullamco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        author: "John Deaux",
+        date: "September 22, 22",
+        time: "10:14am",
+    },
+    {
+        title: "Death Stranding : Deluxe",
+        image: "images/cover-dc.jpg",
+        detail: "Deluxe : Premium content",
+        author: "John Frank",
+        date: "December 32, 1980",
+        time: "25:35",
+    },
+    {
+        title: "Death Stranding : Deluxe",
+        image: "images/cover-dc.jpg",
+        detail: "Deluxe : Premium content",
+        author: "John Frank",
+        date: "December 32, 1980",
+        time: "25:35",
+    }
+]
 
 
 
@@ -23,9 +68,7 @@
 
 //WRITTEN FOR PLAGUE TALE
 
-$(document).ready(function(){
-    //placePost();
-});
+
 
 function placePost(){
     let limit = posts.length;
