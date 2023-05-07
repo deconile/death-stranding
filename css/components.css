@@ -107,6 +107,10 @@
     border-top:1px solid var(--primary);
 }
 
+.content-box .button.secondary {
+    border-top:1px solid var(--gray-100);
+}
+
 .content-box .button a {
     border-radius: 0;
     border:none;
@@ -122,15 +126,28 @@
 }
 
 .content-box .text .para {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
     font-size: var(--text-sm);
     font-weight: 500;
+}
+
+.content-box .text .para::after {
+    content:'[ . . . ]';
+    position:absolute;
+    bottom:8px;
+    right:0;
+    padding-left:64px;
+    padding-bottom: 2px;
+    background-image:linear-gradient(to left, var(--gray-700) 35%, transparent);
 }
 
 .content-box .text .stamp {
     display: flex;
     justify-content: space-between;
     gap: 16px;
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     color: var(--gray-400);
     font-weight: 600;
     text-transform: uppercase;

@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 function blogPosts() {
     const blog = blogs.map((obj, index) => {
-        const { title, image, detail, author, date, time } = obj;
+        const { title, image, detail, author, date, time, url = "", cta = "Read Post" } = obj;
     
         return $('.blog-content').append(`
             <div class="card">
@@ -22,7 +22,7 @@ function blogPosts() {
                                 <div class="time">on ${date} | ${time}</div>
                             </div>
                         </div>
-                        <div class="button"><a href="">Buy Director's Cut</a></div>
+                        <div class="button secondary"><a href="${url}">${cta}</a></div>
                     </div>
                     <div class="back">
                         <img src="images/logos/logo-drip-white.png" />
@@ -33,18 +33,18 @@ function blogPosts() {
     });
 }
 
-let blogs = [
+const blogs = [
     {
         title: "Death Stranding : Director's Cut",
-        image: "images/cover-dc.jpg",
-        detail: "Fragile ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ullamco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        image: "images/blog-1.jpg",
+        detail: "Fragile ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ullaqmco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
         author: "John Deaux",
         date: "September 22, 22",
         time: "10:14am",
     },
     {
         title: "Death Stranding : Deluxe",
-        image: "images/cover-dc.jpg",
+        image: "images/blog-2.jpg",
         detail: "Deluxe : Premium content",
         author: "John Frank",
         date: "December 32, 1980",
@@ -52,12 +52,44 @@ let blogs = [
     },
     {
         title: "Death Stranding : Deluxe",
-        image: "images/cover-dc.jpg",
+        image: "images/blog-3.jpg",
         detail: "Deluxe : Premium content",
         author: "John Frank",
         date: "December 32, 1980",
         time: "25:35",
-    }
+    },
+    {
+        title: "Death Stranding : Deluxe",
+        image: "images/blog-4.jpg",
+        detail: "Deluxe : Premium content",
+        author: "John Frank",
+        date: "December 32, 1980",
+        time: "25:35",
+    },
+    {
+        title: "Death Stranding : Deluxe",
+        image: "images/blog-5.jpg",
+        detail: "Deluxe : Premium content",
+        author: "John Frank",
+        date: "December 32, 1980",
+        time: "25:35",
+    },
+    {
+        title: "Death Stranding : Deluxe",
+        image: "images/blog-6.jpg",
+        detail: "Deluxe : Premium content",
+        author: "John Frank",
+        date: "December 32, 1980",
+        time: "25:35",
+    },
+    {
+        title: "Death Stranding : Deluxe",
+        image: "images/blog-7.jpg",
+        detail: "Deluxe : Premium content",
+        author: "John Frank",
+        date: "December 32, 1980",
+        time: "25:35",
+    },
 ]
 
 

@@ -250,7 +250,7 @@ nav ul li a {
 
 nav ul li.active {
     background-color: var(--primary);
-    pointer-events: none;;
+    pointer-events: none;
 }
 
 nav ul li:hover a, nav ul li.active a {
@@ -259,6 +259,7 @@ nav ul li:hover a, nav ul li.active a {
 
 nav ul li.active {
     width:auto;
+    white-space: nowrap;
 }
 
 nav ul li:hover {
