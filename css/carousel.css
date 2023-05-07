@@ -57,6 +57,7 @@
 
 .bubbles > div.active {
     width:100%;
+    pointer-events: none;
 }
 
 .bubbles > div.jux {

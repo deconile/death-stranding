@@ -38,12 +38,12 @@ function navBar() {
         let temp = `<li><a href="${urls[i]}">${titles[i]}</a></li>`
         $('nav').find('ul').append(temp);
         if(loc === urls[i]){
-            $('nav').find('li').eq(i).find('a').addClass('active');
+            $('nav').find('li').eq(i).addClass('active');
         }
     }
 
-    if(!$('nav').find('li').find('a').hasClass('active')){
-        $('nav').find('li').first().find('a').addClass('active');
+    if(!$('nav').find('li').hasClass('active')){
+        $('nav').find('li').first().addClass('active');
     }
 };
 

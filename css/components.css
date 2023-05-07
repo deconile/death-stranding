@@ -5,15 +5,16 @@
 
 /* BUTTONS */
 .button {
-
+    border: 1px solid var(--primary);
+    background-color: var(--overlay-dark-md);
+    cursor:pointer;
+    transition:500ms;
 }
 
 .button a {
     display: block;
-    padding: 16px 64px;
+    padding: 24px 64px;
     color: var(--primary);
-    border: 1px solid var(--primary);
-    background-color: var(--overlay-dark);
     text-decoration: none;
     font-variant: small-caps;
     font-weight: 600;
@@ -21,31 +22,58 @@
     text-align:center;
 }
 
-.button.condensed a {
+.button.condensed, .button.condensed a {
     display:inline-block;
 }
 
-.button.secondary a {
-    border-color: var(--gray-100);
-    color: var(--gray-100);
+.button.secondary {border-color: var(--gray-100);}
+.button.secondary a {color: var(--gray-100);}
+
+.button:hover {background-color: var(--primary);}
+.button.secondary:hover {background-color: var(--gray-100);}
+.button:hover a {color: var(--gray-800);}
+
+
+/* TILTING BUTTONS */
+
+.button.tilt {
+    transform: perspective(1000px);
+    transform-style: preserve-3d;
+    transition:500ms;
 }
 
-.button a:hover {
-    background-color: var(--primary);
-    color: var(--gray-800);
-    border-radius:100px;
+.button.tilt::before {
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:transparent;
+    border:1px solid transparent;
+    transform:translateZ(0deg);
+    transition:1000ms;
 }
 
-.button.secondary a:hover {
-    background-color: var(--gray-100);
+.button.tilt:hover {
+    transform: perspective(1000px) rotateX(25deg) rotateY(25deg) rotateZ(-10deg) translateY(-20px);
 }
 
+.button.tilt:hover::before {
+    border:1px solid var(--gray-100);
+    transform:translateZ(-30px);
+    animation: button-blink 250ms ease-in infinite alternate;
+}
+
+@keyframes button-blink {
+    from{background-color:transparent;}
+    to{background-color:#FFF6;}
+}
 
 
 
 /* CONTENT BOXES | BUY, BLOG, ETC */
 .content-box {
     max-width: 500px;
+    background-color:var(--gray-700);
     border: 1px solid var(--gray-100);
     box-shadow: 2px 4px 6px 3px #0009;
 }
@@ -75,6 +103,7 @@
 }
 
 .content-box .button {
+    border: none;
     border-top:1px solid var(--primary);
 }
 
@@ -90,7 +119,6 @@
     padding: 32px;
     display: grid;
     gap: 32px;
-    background-color:var(--gray-700);
 }
 
 .content-box .text .para {

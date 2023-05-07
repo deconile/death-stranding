@@ -43,6 +43,7 @@
 
 #purchase {
     background-image: url("../images/purchase-bg-1.jpg");
+    height:100%;
 }
 
 #purchase .container {
