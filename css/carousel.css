@@ -111,7 +111,8 @@
 
 
 
-/* IMAGE CAROUSEL */
+
+/* IMAGE CAROUSEL **********************************************/
 
 #image-carousel .container {
     padding: 0;
@@ -159,6 +160,9 @@
     padding-bottom:64px;
     z-index: 1;
 }
+
+
+/* BLOG CAROUSEL ********************************************/
 
 #blog-carousel .blog {
     overflow-x: auto;

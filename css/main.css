@@ -53,6 +53,8 @@ html, body {
 
 img {width:100%;}
 
+
+/* SECTIONS */
 section {
     background-size:cover;
     background-position:center;
@@ -77,17 +79,35 @@ section .container.bottom {align-items: flex-end;}
 
 section .content {
     width:100%;
-    height:100%;
     display:grid;
     gap:32px;
 }
 
-.limited {
+/* LIMITATIONS */
+
+.limited, .condensed {
     width:100%;
     max-width:1200px;
-    height:100%;
     margin:auto;
 }
+
+.condensed {max-width:900px;}
+
+.left {margin-right:auto;}
+.right {margin-left:auto;}
+
+/* GRIDS */
+.cols {
+    display:flex;
+    gap:32px;
+}
+
+.cols.center {justify-content: center;}
+.cols.spaced {justify-content: space-between;}
+
+
+
+/* OVERLAYS */
 
 .overlay {
     width:100%;
@@ -156,6 +176,9 @@ h3 {font-size:1.5em;}
 h4 {font-size:1.2em;}
 h5 {font-size:0.9em; font-weight:400;}
 
+.primary {color:var(--primary);}
+.bold {font-weight:500;}
+
 p {
     line-height:2em;
 }
@@ -169,6 +192,8 @@ ul {
     color:var(--gray-500);
     font-weight:600;
 }
+
+.text-center {text-align: center;}
 
 
 /* NAVIGATION *****************************************************/
@@ -279,4 +304,36 @@ footer > div {
 .rating {
     width:200px;
     margin:0 auto;
+}
+
+
+
+
+/* CUSTOM SCROLLBAR **************************************/
+*::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: var(--gray-700);
+    border: 3px solid #000;
+    border-radius: 8px;
+}
+
+*::-webkit-scrollbar-button {
+    display:none;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color:var(--gray-300);
+    border-radius: 8px;
+    border: 3px solid #000;
+    transition:500ms;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color:var(--primary);
+    border: 3px solid transparent;
 }

@@ -1,3 +1,10 @@
+
+/* GLOBAL STYLES ***************************/
+.gradient-dark {
+    background-image:linear-gradient(to bottom, var(--gray-700), var(--gray-800));
+}
+
+
 /* HERO *********************************/
 
 #hero {
@@ -6,8 +13,9 @@
 }
 
 
-#hero .content {
+#hero .content, #hero .limited {
     position: relative;
+    height:100%;
 }
 
 #hero .title {
@@ -43,7 +51,7 @@
 
 #purchase {
     background-image: url("../images/purchase-bg-1.jpg");
-    height:100%;
+    background-attachment: fixed;
 }
 
 #purchase .container {
