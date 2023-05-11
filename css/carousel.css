@@ -145,10 +145,6 @@
     transition:1000ms;
 }
 
-#image-carousel .images > div.out {
-    top:100%;
-}
-
 #image-carousel .pagination {
     position: absolute;
     bottom:0;
@@ -162,6 +158,87 @@
     padding: 128px;
     padding-bottom:64px;
     z-index: 1;
+}
+
+
+/* ANIMATED SWIPE **************************************/
+
+#image-carousel .images > div {
+    overflow:hidden;
+    transform-origin: top left;
+    animation: image-skew-back 1000ms ease-in-out reverse;
+}
+
+#image-carousel .images > div.out {
+    animation: image-skew 1000ms ease-in-out normal forwards;
+}
+
+@keyframes image-skew {
+    0% {transform: skewY(0deg);}
+    20% {transform: skewY(0deg);}
+    60% {transform: skewY(25deg);top:0;}
+    100% {transform: skewY(0deg);top:100%;}
+}
+
+@keyframes image-skew-back {
+    0% {transform: skewY(0deg);}
+    20% {transform: skewY(0deg);}
+    60% {transform: skewY(25deg);top:0;}
+    100% {transform: skewY(0deg);top:100%;}
+}
+
+
+#image-carousel .images > div img {
+    transform-origin: top left;
+    animation: image-img-skew-back 1000ms ease-in-out reverse;
+}
+
+#image-carousel .images > div.out img {
+    animation: image-img-skew 1000ms ease-in-out normal forwards;
+}
+
+@keyframes image-img-skew {
+    0% {transform: skewY(0deg);}
+    20% {transform: skewY(0deg);}
+    60% {transform: skewY(-25deg);top:0;}
+    100% {transform: skewY(0deg);top:100%;}
+}
+
+@keyframes image-img-skew-back {
+    0% {transform: skewY(0deg);}
+    20% {transform: skewY(0deg);}
+    60% {transform: skewY(-25deg);top:0;}
+    100% {transform: skewY(0deg);top:100%;}
+}
+
+
+/* WHITE COVER */
+#image-carousel .images > div::after {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: image-flash-back 1000ms ease-out;
+}
+
+#image-carousel .images > div.out::after {
+    animation: image-flash 1000ms ease-out;
+}
+
+
+@keyframes image-flash {
+    0% {background-color: transparent;}
+    20% {background-color: #fffd;}
+    100% {background-color: #fffd;}
+}
+
+@keyframes image-flash-back {
+    0% {background-color: transparent;}
+    20% {background-color: #fffd;}
+    80% {background-color: #fffd;}
+    100% {background-color: transparent;}
 }
 
 

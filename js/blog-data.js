@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 
 function blogPosts() {
-    const blog = blogs.map((obj, index) => {
+    const blog = blogs.slice(0, 5).map((obj, index) => {
         const { title, image, detail, author, date, time, url = "", cta = "Read Post" } = obj;
     
         return $('.blog-content').append(`
@@ -91,10 +91,6 @@ const blogs = [
         time: "25:35",
     },
 ]
-
-
-
-
 
 
 

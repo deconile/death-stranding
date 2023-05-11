@@ -1,8 +1,5 @@
 
 
-
-
-
 /* BUTTONS */
 .button {
     border: 1px solid var(--primary);
@@ -49,7 +46,7 @@
     height:100%;
     background-color:transparent;
     border:1px solid transparent;
-    transform:translateZ(0deg);
+    transform:translateZ(0);
     transition:1000ms;
 }
 
@@ -156,11 +153,58 @@
 }
 
 
-/* CARDS ********************************************/
 
-.card {
-    
+/* TILT BOXES */
+
+.content-box.tilt {
+    transform: perspective(1000px);
+    transform-style: preserve-3d;
+    transition:500ms;
+    cursor: pointer;
 }
+
+.content-box.tilt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    background-color: transparent;
+    transform:translateZ(0);
+    transition:1000ms;
+}
+
+.content-box.tilt:hover {
+    transform: perspective(1000px) rotateX(25deg) rotateY(25deg) rotateZ(-10deg) translateY(-20px);
+}
+
+.content-box.tilt.rev:hover {
+    transform: perspective(1000px) rotateX(25deg) rotateY(-25deg) rotateZ(10deg) translateY(-20px);
+}
+
+.content-box.tilt:hover::before {
+    border-color: var(--gray-100);
+    transform: translateZ(-80px);
+    animation: content-box-blink 250ms ease-in infinite alternate;
+}
+
+
+@keyframes content-box-blink {
+    from {background-color: transparent;}
+    to {background-color: #fff6;}
+}
+
+.content-box.tilt:hover .button {
+    background-color: var(--primary);
+}
+
+.content-box.tilt:hover .button a {
+    color: var(--gray-800);
+}
+
+/* CARDS ********************************************/
 
 .flip {
     position: relative;
