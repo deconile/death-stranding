@@ -59,6 +59,14 @@
 }
 
 
+
+/* BLOG  ****************************/
+#blog-carousel .container {
+    display: grid;
+    padding: 64px 0 128px;
+}
+
+
 /* CLOSER ***************************/
 #closer {
     background-image: url("../images/cover-bike.jpg");
@@ -73,9 +81,4 @@
 
 #closer .title {
     width:70%;
-}
-
-#blog-carousel .container {
-    display: grid;
-    padding: 128px 0;
 }

@@ -6,6 +6,10 @@ $(window).on('load', function(){
     setBlogCarousel();
     carousel();
     imageOrder();
+
+    setTimeout(function(){
+        
+    },1000)
 });
 
 $(window).on('resize', function(){
@@ -41,7 +45,6 @@ function carousel(){
     let ctrl = $('.pagination').find('.nav');
     let prev = $('.pagination').find('.prev');
     let next = $('.pagination').find('.next');
-    let bubble = $('.pagination').find('.bubbles').children();
 
     prev.addClass('inactive');
 

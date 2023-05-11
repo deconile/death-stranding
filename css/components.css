@@ -75,7 +75,7 @@
     max-width: 500px;
     background-color:var(--gray-700);
     border: 1px solid var(--gray-100);
-    box-shadow: 2px 4px 6px 3px #0009;
+    box-shadow: 4px 6px 4px -2px #0006;
 }
 
 .content-box .label {
@@ -197,10 +197,6 @@
 
 .card .back img {
     width: 50%;
-}
-
-.card .flip .content-box {
-    box-shadow: none;   
 }
 
 

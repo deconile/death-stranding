@@ -1,0 +1,116 @@
+
+/* ANIMATION SPEEDS */
+.fast,.fast::before,.fast::after {animation-duration: 1000ms;}
+.medium,.medium::before,.medium::after {animation-duration: 2000ms;}
+.slow,.slow::before,.slow::after {animation-duration: 3000ms;}
+.snail,.snail::before,.snail::after {animation-duration: 5000ms;}
+
+
+/* PIPS **************************************/
+.pip,.pip.stacked {position:relative;}
+
+.pip {
+    background-color:var(--gray-300);
+    border-radius: 2px;
+}
+
+.pip.sm {
+    width:10px;
+    height:4px;
+}
+
+.pip.md {
+    width:18px;
+    height:4px;
+}
+
+.pip.lg {
+    width:24px;
+    height:6px;
+}
+
+.pip.xl {
+    width:36px;
+    height:10px;
+}
+
+.pip.stacked::before {
+    content:'';
+    position: absolute;
+    top:calc(100% + 2px);
+    width:100%;
+    height:100%;
+    background-color:var(--gray-300);
+    border-radius: 2px;
+    opacity:0.5;
+}
+
+.pip.stacked::after {
+    content:'';
+    position: absolute;
+    top:calc(200% + 4px);
+    width:100%;
+    height:100%;
+    background-color:var(--gray-300);
+    border-radius: 2px;
+    opacity:0.25;
+}
+
+.pip.dark, .pip.dark.stacked::before, .pip.dark.stacked::after {background-color:var(--gray-800);}
+
+.pip.stacked.up::before {top:calc(-100% - 2px);}
+.pip.stacked.up::after {top:calc(-200% - 4px);}
+
+.pip.stacked.left::before {left:25%;}
+.pip.stacked.left::after {left:50%;}
+.pip.stacked.left.long::before {left:150%;}
+.pip.stacked.left.long::after {left:300%;}
+
+.pip.stacked.right::before {right:25%;}
+.pip.stacked.right::after {right:50%;}
+.pip.stacked.right.long::before {right:150%;}
+.pip.stacked.right.long::after {right:300%;}
+
+.pip.runner-x {
+    animation-name:runner-x;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+.pip.stacked.runner-x::before {
+    animation-name:tail-one;
+}
+
+.pip.stacked.runner-x::after {
+    animation-name:tail-two;
+}
+
+.runner-x, .runner-x::before, .runner-x::after {animation-iteration-count: infinite;}
+
+
+@keyframes runner-x {
+    0% {left:0%}
+    40% {left:100%; transform:translateX(-100%)}
+    50% {left:100%; transform:translateX(-100%)}
+    90% {left:0%}
+}
+
+@keyframes tail-one {
+    0% {transform:translateX(0%)}
+    5% {transform:translateX(-50%)}
+    40% {transform:translateX(-50%)}
+    50% {transform:translateX(0%)}
+    55% {transform:translateX(50%)}
+    90% {transform:translateX(50%)}
+    95% {transform:translateX(0%)}
+}
+
+@keyframes tail-two {
+    0% {transform:translateX(0%)}
+    5% {transform:translateX(-100%)}
+    40% {transform:translateX(-100%)}
+    50% {transform:translateX(0%)}
+    55% {transform:translateX(100%)}
+    90% {transform:translateX(100%)}
+    95% {transform:translateX(0%)}
+}
