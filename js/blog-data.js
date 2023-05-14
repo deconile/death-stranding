@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 
 function blogPosts() {
-    const blog = blogs.slice(0, 5).map((obj, index) => {
+    const blog = blogs.slice(0, 7).map((obj, index) => {
         const { title, image, detail, author, date, time, url = "", cta = "Read Post" } = obj;
     
         return $('.blog-content').append(`
@@ -43,52 +43,52 @@ const blogs = [
         time: "10:14am",
     },
     {
-        title: "Death Stranding : Deluxe",
+        title: "Survival Tips to Avoid a Void Out",
         image: "images/blog-2.jpg",
-        detail: "Deluxe : Premium content",
-        author: "John Frank",
-        date: "December 32, 1980",
-        time: "25:35",
+        detail: "Void Outs are lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ullaqmco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        author: "Jane Deaux",
+        date: "September 25, 22",
+        time: "1:14pm",
     },
     {
-        title: "Death Stranding : Deluxe",
+        title: "The Bond Between",
         image: "images/blog-3.jpg",
-        detail: "Deluxe : Premium content",
-        author: "John Frank",
-        date: "December 32, 1980",
-        time: "25:35",
+        detail: "Sam and Fragile ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ullaqmco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        author: "John Deaux",
+        date: "October 3, 22",
+        time: "11:36am",
     },
     {
-        title: "Death Stranding : Deluxe",
+        title: "It's Hard Out Here for a Courier",
         image: "images/blog-4.jpg",
-        detail: "Deluxe : Premium content",
-        author: "John Frank",
-        date: "December 32, 1980",
-        time: "25:35",
+        detail: "Here are a few delivery tips ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ullaqmco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        author: "Jane Deaux",
+        date: "September 25, 22",
+        time: "1:14pm",
     },
     {
-        title: "Death Stranding : Deluxe",
+        title: "What Comes Next",
         image: "images/blog-5.jpg",
-        detail: "Deluxe : Premium content",
-        author: "John Frank",
-        date: "December 32, 1980",
-        time: "25:35",
+        detail: "Our story continues ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ullaqmco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        author: "John Deaux",
+        date: "October 5, 22",
+        time: "12:05pm",
     },
     {
-        title: "Death Stranding : Deluxe",
+        title: "Fragile's Struggle",
         image: "images/blog-6.jpg",
-        detail: "Deluxe : Premium content",
-        author: "John Frank",
-        date: "December 32, 1980",
-        time: "25:35",
+        detail: "Fragile ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ullaqmco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        author: "Jane Deaux",
+        date: "October 14, 22",
+        time: "3:55pm",
     },
     {
-        title: "Death Stranding : Deluxe",
+        title: "Mama's Backstory Explained",
         image: "images/blog-7.jpg",
-        detail: "Deluxe : Premium content",
-        author: "John Frank",
-        date: "December 32, 1980",
-        time: "25:35",
+        detail: "Mama ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ullaqmco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        author: "John Deaux",
+        date: "October 16, 22",
+        time: "2:10am",
     },
 ]
 

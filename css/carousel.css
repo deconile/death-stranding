@@ -112,6 +112,80 @@
 }
 
 
+/* PAGINATION SMALL OVERRIDES */
+.pagination.small {
+    padding:0;
+}
+
+.pagination.small .bubbles > div > div {
+    transform: none;
+}
+
+.pagination.small .bubbles > div.active > div {
+    width: 32px;
+    height: 32px;
+    transform: rotateZ(-45deg);
+}
+
+.pagination.small .bubbles > div.jux {
+    width:32px;
+}
+
+.pagination.small .bubbles > div.jux > div {
+    width: 24px;
+    height: 24px;
+    background-color: #6669;
+    border-color: #999;
+    border-radius: 100%;
+}
+
+.pagination.small .bubbles > div > div {
+    transform: rotateZ(-90deg);
+}
+
+.pagination.small .bubbles > div.jux > div {
+    transform: rotateZ(-90deg);
+}
+
+.pagination.small .bubbles > div.active + .jux > div {
+    transform: rotateZ(0deg);
+}
+
+.pagination.small .bubbles > div.active + .jux + div > div {
+    transform: rotateZ(0deg);
+}
+
+
+/* HOVER STATES */
+.bubbles > div > div:hover,
+.bubbles > div.active + .jux + div > div:hover,
+.bubbles > div.jux > div:hover,
+.bubbles > div.active + .jux > div:hover,
+.pagination.small .bubbles > div > div:hover,
+.pagination.small .bubbles > div.jux > div:hover,
+.pagination.small .bubbles > div.active + .jux > div:hover,
+.pagination.small .bubbles > div.active + .jux + div > div:hover {
+    border-radius: 0px;
+    background-color:#FFFC;
+    transition:500ms;
+}
+
+.bubbles > div > div:hover {transform:rotateZ(-45deg);}
+.bubbles > div.active + .jux + div > div:hover {transform: rotateZ(45deg);}
+.bubbles > div.jux > div:hover {transform: translateY(-24px) rotateZ(-45deg);}
+.bubbles > div.active + .jux > div:hover {transform: translateY(-24px)rotateZ(-45deg);}
+
+.pagination.small .bubbles > div > div:hover,
+.pagination.small .bubbles > div.jux > div:hover {
+    transform: rotateZ(-45deg);
+}
+
+.pagination.small .bubbles > div.active + .jux > div:hover,
+.pagination.small .bubbles > div.active + .jux + div > div:hover {
+    transform: rotateZ(45deg);
+}
+
+
 
 
 
@@ -176,44 +250,48 @@
 @keyframes image-skew {
     0% {transform: skewY(0deg);}
     20% {transform: skewY(0deg);}
-    60% {transform: skewY(25deg);top:0;}
-    100% {transform: skewY(0deg);top:100%;}
+    50% {transform: skewY(25deg);top:0;}
+    60% {transform: skewY(25deg);top:0%;}
+    100% {transform: skewY(25deg);top:100%;}
 }
 
 @keyframes image-skew-back {
     0% {transform: skewY(0deg);}
     20% {transform: skewY(0deg);}
-    60% {transform: skewY(25deg);top:0;}
-    100% {transform: skewY(0deg);top:100%;}
+    50% {transform: skewY(25deg);top:0;}
+    60% {transform: skewY(25deg);top:0%;}
+    100% {transform: skewY(25deg);top:100%;}
 }
 
 
-#image-carousel .images > div img {
-    transform-origin: top left;
+#image-carousel .images > div > div {
+    /* transform-origin: top left; */
     animation: image-img-skew-back 1000ms ease-in-out reverse;
 }
 
-#image-carousel .images > div.out img {
+#image-carousel .images > div.out > div {
     animation: image-img-skew 1000ms ease-in-out normal forwards;
 }
 
 @keyframes image-img-skew {
     0% {transform: skewY(0deg);}
     20% {transform: skewY(0deg);}
+    50% {transform: skewY(-25deg);top:0;}
     60% {transform: skewY(-25deg);top:0;}
-    100% {transform: skewY(0deg);top:100%;}
+    100% {transform: skewY(-25deg);top:100%;}
 }
 
 @keyframes image-img-skew-back {
     0% {transform: skewY(0deg);}
     20% {transform: skewY(0deg);}
+    50% {transform: skewY(-25deg);top:0;}
     60% {transform: skewY(-25deg);top:0;}
-    100% {transform: skewY(0deg);top:100%;}
+    100% {transform: skewY(-25deg);top:100%;}
 }
 
 
 /* WHITE COVER */
-#image-carousel .images > div::after {
+#image-carousel .images > div > div::after {
     content:'';
     position: absolute;
     top: 0;
@@ -221,23 +299,24 @@
     width: 100%;
     height: 100%;
     animation: image-flash-back 1000ms ease-out;
+    z-index:1;
 }
 
-#image-carousel .images > div.out::after {
+#image-carousel .images > div.out > div::after {
     animation: image-flash 1000ms ease-out;
 }
 
 
 @keyframes image-flash {
     0% {background-color: transparent;}
-    20% {background-color: #fffd;}
-    100% {background-color: #fffd;}
+    50% {background-color: #FFFC;}
+    100% {background-color: #FFFC;}
 }
 
 @keyframes image-flash-back {
     0% {background-color: transparent;}
-    20% {background-color: #fffd;}
-    80% {background-color: #fffd;}
+    20% {background-color: #FFFC;}
+    50% {background-color: #FFFC;}
     100% {background-color: transparent;}
 }
 
@@ -266,48 +345,7 @@
 }
 
 
-/* BLOG PAGINATION OVERRIDES */
-.pagination.small {
-    padding:0;
-}
 
-.pagination.small .bubbles > div > div {
-    transform: none;
-}
-
-.pagination.small .bubbles > div.active > div {
-    width: 32px;
-    height: 32px;
-    transform: rotateZ(-45deg);
-}
-
-.pagination.small .bubbles > div.jux {
-    width:32px;
-}
-
-.pagination.small .bubbles > div.jux > div {
-    width: 24px;
-    height: 24px;
-    background-color: #6669;
-    border-color: #999;
-    border-radius: 100%;
-}
-
-.pagination.small .bubbles > div > div {
-    transform: rotateZ(-90deg);
-}
-
-.pagination.small .bubbles > div.jux > div {
-    transform: rotateZ(-90deg);
-}
-
-.pagination.small .bubbles > div.active + .jux > div {
-    transform: rotateZ(0deg);
-}
-
-.pagination.small .bubbles > div.active + .jux + div > div {
-    transform: rotateZ(0deg);
-}
 
 
 

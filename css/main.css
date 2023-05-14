@@ -49,6 +49,8 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     box-sizing: border-box;
+    transition:1000ms;
+    scroll-behavior: smooth;
 }
 
 img {width:100%;}
@@ -63,25 +65,28 @@ section {
 section.full {height:100%;}
 section.parallax {background-attachment: fixed;}
  
-section .container {
+section > .container {
     position:relative;
     display:flex;
     padding:128px;
 }
 
-section .container.left {justify-content: left;}
-section .container.center {justify-content: center;}
-section .container.right {justify-content: right;}
+section > .container.left {justify-content: left;}
+section > .container.center {justify-content: center;}
+section > .container.right {justify-content: right;}
 
-section .container.top {align-items: flex-start;}
-section .container.middle {align-items: center;}
-section .container.bottom {align-items: flex-end;}
+section > .container.top {align-items: flex-start;}
+section > .container.middle {align-items: center;}
+section > .container.bottom {align-items: flex-end;}
 
-section .content {
+section > .container > .content {
     width:100%;
     display:grid;
     gap:32px;
 }
+
+section > .container.half.left > .content {margin-right:50%;}
+section > .container.half.right > .content {margin-left:50%;}
 
 /* LIMITATIONS */
 
@@ -132,16 +137,14 @@ section .content {
 }
 
 .overflow {overflow: hidden;}
-.absolute {position: absolute;}
+.absolute {position: absolute;display: flex;}
 .fixed {background-attachment: fixed;}
 
-.absolute.center {
-    display: flex;
-    justify-content: center;
-}
-.center {
-    margin:0 auto;
-}
+.absolute.center  {justify-content: center;}
+.absolute.left  {justify-content: left;}
+.absolute.right  {justify-content: right;}
+
+.center {margin:0 auto;}
 
 
 /* SPACING */
@@ -315,25 +318,39 @@ footer > div {
     align-items: center;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto 1fr auto;
+    transition:1000ms;
 }
 
-/* .frame > div {
-    width:100%;
-    height:100%;
-} */
+.frame .text  {
+    overflow:hidden;
+    transition: 2000ms;
+}
 
-.frame .text {
+.frame .text > .container {
     display:grid;
     gap:16px;
     padding:16px;
 }
 
-.frame .corner.top {border-top:1px solid var(--gray-400);}
-.frame .corner.bottom {border-bottom:1px solid var(--gray-400);}
-.frame .corner.left {border-left:1px solid var(--gray-400);}
-.frame .corner.right {border-right:1px solid var(--gray-400);}
+.frame.glitch .text {
+    transform-origin: center bottom;
+    animation: glitch 1000ms ease 500ms;
+}
 
-
+@keyframes glitch {
+    0% {filter:blur(0px);}
+    40% {filter:blur(0px);}
+    50% {filter:blur(2px);transform:translate(0px, 0px);}
+    55% {transform:translateX(10px);}
+    60% {transform:translateX(-10px);}
+    65% {transform:translateX(10px);}
+    70% {transform:translateX(-20px) skewX(0deg);}
+    75% {transform:translateX(20px) skewX(10deg);}
+    80% {transform:translateX(-40px) skewX(-25deg);}
+    85% {transform:translateX(50px) skewX(0deg);}
+    90% {filter:blur(3px);transform:translate(0px, 0px);}
+    100% {filter:blur(0px);}
+}
 
 
 /* CUSTOM SCROLLBAR **************************************/

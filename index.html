@@ -21,17 +21,17 @@
     </head>
 
     <body>
-        <section id="hero" class="full parallax">
+        <section id="hero" class="full parallax snap story">
             <div class="limited">
                 <div class="content">
                     <div class="absolute center">
                         <div class="title">
-                            <div class="image-reveal"><img src="images/logos/logo-drip-title-white.png"></div>
+                            <div class="image-reveal out"><img src="images/logos/logo-drip-title-white.png"></div>
                         </div>
                     </div>
                     <div class="absolute center">
                         <div class="cta">
-                            <div class="button condensed tilt"><a href="">Buy Now</a></div>
+                            <div class="button condensed tilt"><a href="buy-now.html">Buy Now</a></div>
                             <div class="logos">
                                 <div><img src="images/logos/steam-white.png" /></div>
                                 <div><img src="images/logos/logo_epic.png" /></div>
@@ -42,32 +42,36 @@
             </div>
         </section>
 
-        <section id="story" class="full parallax">
-            <div class="container overlay left middle">
+        <section id="story" class="full parallax snap story">
+            <div class="container overlay left middle half">
                 <div class="content">
-                    <div class="frame">
-                        <div class="pip sm"></div>
-                        <div></div>
-                        <div class="pip lg"></div>
-                        <div></div>
-                        <div class="text">
-                            <h1>A World Forever Changed</h1>
-                            <p>From legendary game creator Hideo Kojima comes a critically acclaimed, genre-defying open world action adventure for PC, starring Norman Reedus, Mads Mikkelsen, Léa Seydoux and Lindsay Wagner.</p>
-                            <p>In the near future, mysterious explosions have rocked the globe, setting off a series of supernatural events known as the Death Stranding. With otherworldly creatures plaguing the landscape, and mass extinction imminent, it's up to Sam Porter Bridges to travel across the ravaged wasteland and save humanity from impending annihilation.</p>
+                    <div class="frame-container">
+                        <div class="frame out">
+                            <div class="pip sm"></div>
+                            <div></div>
+                            <div class="pip lg"></div>
+                            <div></div>
+                            <div class="text">
+                                <div class="container">
+                                    <h1>A World Forever Changed</h1>
+                                    <p>From legendary game creator Hideo Kojima comes a critically acclaimed, genre-defying open world action adventure for PC, starring Norman Reedus, Mads Mikkelsen, Léa Seydoux and Lindsay Wagner.</p>
+                                    <p>In the near future, mysterious explosions have rocked the globe, setting off a series of supernatural events known as the Death Stranding. With otherworldly creatures plaguing the landscape, and mass extinction imminent, it's up to Sam Porter Bridges to travel across the ravaged wasteland and save humanity from impending annihilation.</p>
+                                </div>
+                            </div>
+                            <div></div>
+                            <div class="pip md stacked"></div>
+                            <div><div class="pip md runner-x slow"></div></div>
+                            <div class="pip md stacked"></div>
                         </div>
-                        <div></div>
-                        <div class="pip md stacked"></div>
-                        <div><div class="pip md runner-x slow"></div></div>
-                        <div class="pip md stacked"></div>
                     </div>
-                    <div class="mar-t-md left">
-                        <div class="button condensed secondary tilt"><a href="">More About The Death Stranding</a></div>
+                    <div class="mar-t-lg left">
+                        <div class="button condensed secondary tilt out"><a href="about.html">More About The Death Stranding</a></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="purchase" class="full">
+        <section id="purchase" class="full snap">
             <div class="overlay container center middle">
                 <div class="content limited">
                     <div class="center text-center">
@@ -75,15 +79,15 @@
                         <h4 class="bold primary">Available for Digital Download or Upgade</h4>
                     </div>
                     <div class="cols spaced mar-t-md">
-                        <div class="content-box buy tilt">
+                        <div class="content-box buy tilt" onclick="window.location.href = 'buy-now.html'">
                             <div class="label">Death Stranding : Director's Cut</div>
                             <div class="image"><img src="images/cover-dc.jpg" /></div>
-                            <div class="button"><a href="">Buy Director's Cut</a></div>
+                            <div class="button"><a href="buy-now.html">Buy Director's Cut</a></div>
                         </div>
-                        <div class="content-box buy tilt rev">
+                        <div class="content-box buy tilt rev" onclick="window.location.href = 'buy-now.html'">
                             <div class="label">Death Stranding : Upgrade</div>
                             <div class="image"><img src="images/cover-upgrade.jpg" /></div>
-                            <div class="button"><a href="">Upgrade to Director's Cut</a></div>
+                            <div class="button"><a href="buy-now.html">Upgrade to Director's Cut</a></div>
                         </div>
                     </div>
                 </div>
@@ -91,17 +95,17 @@
         </section>
 
 
-        <section id="image-carousel" class="carousel full">
+        <section id="image-carousel" class="carousel full snap">
             <div class="container overflow">
                 <div class="content images overflow">
-                    <div><img src="images/carousel-1.jpg" /></div>
-                    <div><img src="images/carousel-2.jpg" /></div>
-                    <div><img src="images/carousel-3.jpg" /></div>
-                    <div><img src="images/carousel-4.jpg" /></div>
-                    <div><img src="images/carousel-5.jpg" /></div>
-                    <div><img src="images/carousel-6.jpg" /></div>
-                    <div><img src="images/carousel-7.jpg" /></div>
-                    <div><img src="images/carousel-8.jpg" /></div>
+                    <div><div><img src="images/carousel-1.jpg" /></div></div>
+                    <div><div><img src="images/carousel-2.jpg" /></div></div>
+                    <div><div><img src="images/carousel-3.jpg" /></div></div>
+                    <div><div><img src="images/carousel-4.jpg" /></div></div>
+                    <div><div><img src="images/carousel-5.jpg" /></div></div>
+                    <div><div><img src="images/carousel-6.jpg" /></div></div>
+                    <div><div><img src="images/carousel-7.jpg" /></div></div>
+                    <div><div><img src="images/carousel-8.jpg" /></div></div>
                 </div>
                 <div class="pagination overlay bottom">
                     <div class="control nav prev"><div></div></div>
@@ -112,7 +116,7 @@
         </section>
 
 
-        <section id="blog-carousel" class="carousel gradient-dark">
+        <section id="blog-carousel" class="carousel snap gradient-dark">
             <div class="container overflow">
 
                 <div class="content blog overflow blog-content"></div>
@@ -122,20 +126,20 @@
                     <div class="control nav next"><div></div></div>
                 </div>
                 <div class="condensed mar-t-lg">
-                    <div class="button secondary"><a href="">View All Articles</a></div>
+                    <div class="button secondary"><a href="blog.html">View All Articles</a></div>
                 </div>
             </div>
         </section>
 
-        <section id="closer" class="full parallax">
+        <section id="closer" class="full parallax snap story">
             <div class="container overlay bottom">
                 <div class="absolute">
                     <div class="title">
-                        <div class="image-reveal"><img src="images/logos/logo-drip-black.png"></div>
+                        <div class="image-reveal out"><img src="images/logos/logo-drip-black.png"></div>
                     </div>
                 </div>
                 <div class="cta">
-                    <div class="button condensed tilt"><a href="">Buy Now</a></div>
+                    <div class="button condensed tilt"><a href="buy-now.html">Buy Now</a></div>
                     <div class="logos">
                         <div><img src="images/logos/steam-white.png" /></div>
                         <div><img src="images/logos/logo_epic.png" /></div>

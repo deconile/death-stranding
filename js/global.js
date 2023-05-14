@@ -4,25 +4,39 @@
 $(document).ready(function(){
     navBar();
     footer();
+    voidBlankLinks();
 });
 
 //RUN ON PAGE LOADED
 $(window).on('load',function(){
-    voidBlankLinks();
+    setSnapPos();
+    sceneSnap();
+    setFrameHeights();
+    setStoryPos();
+    storyReveal();
 });
 
 //RUN WHEN WINDOW IS RESIZED
 $(window).on('resize',function(){
-
+    setSnapPos();
+    setStoryPos();
 });
 
 //RUN WHEN PAGE IS SCROLLED
 //THIS INCLUDES SCROLLING OF ANY KIND (NOT JUST USER CONTROLLED)
 $(window).on('scroll',function(){
-    
+    storyReveal();
+    sceneSnap();
 });
 
 
+//GLOBAL VARIABLES
+var snap = [];
+var story = [];
+var autoScrl = false;
+
+
+//WRITE NAV BAR
 function navBar() {
     //WRITE HTML / TEMPALTES
     $('body').prepend(`<nav></nav>`);
@@ -47,6 +61,7 @@ function navBar() {
     }
 };
 
+//WRITE FOOTER
 function footer(){
     const template = `
     <footer>
@@ -66,6 +81,83 @@ function footer(){
     `
     $('body').append(template);
 }
+
+//SNAP SCENES
+function setSnapPos(){
+
+    //CLEAR "snap" ARRAY TO REFRESH / RESIZING WILL CHANGE THESE VALUES
+
+    //GET THE TOP POSITION FOR EACH SNAP SECTION
+
+    //ADD THOSE VALUES TO THE ARRAY
+
+}
+
+function sceneSnap(){
+    if(!autoScrl){
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function(){
+            autoScrl = true;
+            
+            //GET WINDOW SCROLL POSITION
+
+            //LET VARIABLE = POSITION TO SCROLL TO
+
+            //RUN THROUGH ARRAY AND COMPARE WINDOW SCROLL POSITION VS EACH
+
+            //SET CONDITION TO CHECK WITHIN A PIXEL RANGE
+
+            //SCROLL WINDOW (HTML, BODY) TO THAT POSITION
+
+            //TURN OFF autoScrl TO REACTIVATE
+
+        }, 1000));
+    }
+}
+
+
+//FRAMED CONTAINER REVEALS
+function setFrameHeights(){
+    let frame = $('section.story').find('.frame');
+    let fh = Math.floor(frame.outerHeight());
+    frame.parent().css('height',fh);
+
+    frame.find('.text').each(function(){
+        let h = Math.floor($(this).outerHeight());
+        $(this).attr('data-height',h);
+        $(this).css('height','0px');
+    });
+}
+
+
+//STORY CONTENT REVEALS
+function setStoryPos(){
+    story = [];
+    $('section.story').each(function(){
+        story.push(Math.floor($(this).offset().top));
+    });
+}
+
+function storyReveal(){
+    section = $('section.story');
+    if(section.find('.out').length > 0){
+        for(s = 0; s < story.length; s++){
+            if($(window).scrollTop() >= story[s] - 100){
+                //IF IT IS A FRAMED CONTAINER
+                if(section.eq(s).find('.out').hasClass('frame')){
+                    let h = section.eq(s).find('.frame').find('.text').attr('data-height');
+                    section.eq(s).find('.frame').find('.text').css('height',h);
+                    section.eq(s).find('.frame').addClass('glitch');
+                }
+                section.eq(s).find('.out').removeClass('out');
+            }
+        }
+    }
+}
+
+
+
+
 
 
 //SETS CLICK OVERRIDE TO PREVENT PAGE RELOAD ON BLANK LINKS

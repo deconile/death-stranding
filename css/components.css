@@ -2,10 +2,19 @@
 
 /* BUTTONS */
 .button {
+    position:relative;
+    top:0;
+    opacity: 1;
     border: 1px solid var(--primary);
     background-color: var(--overlay-dark-md);
     cursor:pointer;
-    transition:500ms;
+    transition:500ms, top 1000ms, opacity 1000ms;
+}
+
+.button.out {
+    position:relative;
+    top:100px;
+    opacity: 0;
 }
 
 .button a {
@@ -36,7 +45,6 @@
 .button.tilt {
     transform: perspective(1000px);
     transform-style: preserve-3d;
-    transition:500ms;
 }
 
 .button.tilt::before {
@@ -249,10 +257,11 @@
 .image-reveal {
     overflow:hidden;
     height:100%;
-    transition: 1000ms;
+    transition: 2000ms;
+    transition-delay:500ms;
 }
 
-.image-reveal.hidden {
+.image-reveal.out {
     height:0%;
 }
 
