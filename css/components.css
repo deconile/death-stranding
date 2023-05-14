@@ -58,11 +58,11 @@
     transition:1000ms;
 }
 
-.button.tilt:hover {
+.button-container:hover .button.tilt {
     transform: perspective(1000px) rotateX(25deg) rotateY(25deg) rotateZ(-10deg) translateY(-20px);
 }
 
-.button.tilt:hover::before {
+.button-container:hover .button.tilt::before {
     border:1px solid var(--gray-100);
     transform:translateZ(-30px);
     animation: button-blink 250ms ease-in infinite alternate;
@@ -161,13 +161,13 @@
 }
 
 
-
 /* TILT BOXES */
 
 .content-box.tilt {
     transform: perspective(1000px);
     transform-style: preserve-3d;
     transition:500ms;
+    transition-delay: 500ms;
     cursor: pointer;
 }
 
@@ -184,15 +184,16 @@
     transition:1000ms;
 }
 
-.content-box.tilt:hover {
+.content-box-container:hover .content-box.tilt {
     transform: perspective(1000px) rotateX(25deg) rotateY(25deg) rotateZ(-10deg) translateY(-20px);
+    transition-delay:0ms;
 }
 
-.content-box.tilt.rev:hover {
+.content-box-container:hover .content-box.tilt.rev {
     transform: perspective(1000px) rotateX(25deg) rotateY(-25deg) rotateZ(10deg) translateY(-20px);
 }
 
-.content-box.tilt:hover::before {
+.content-box-container:hover .content-box.tilt::before {
     border-color: var(--gray-100);
     transform: translateZ(-80px);
     animation: content-box-blink 250ms ease-in infinite alternate;
@@ -204,11 +205,11 @@
     to {background-color: #fff6;}
 }
 
-.content-box.tilt:hover .button {
+.content-box-container:hover .content-box.tilt .button {
     background-color: var(--primary);
 }
 
-.content-box.tilt:hover .button a {
+.content-box-container:hover .content-box.tilt .button a {
     color: var(--gray-800);
 }
 

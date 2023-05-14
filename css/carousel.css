@@ -197,7 +197,8 @@
 }
 
 #image-carousel .images, 
-#image-carousel .images > div, 
+#image-carousel .images > div,
+#image-carousel .images > div > div,
 #image-carousel .images img {
     width: 100%;
     height: 100%;

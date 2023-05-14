@@ -84,12 +84,10 @@ function footer(){
 
 //SNAP SCENES
 function setSnapPos(){
-
-    //CLEAR "snap" ARRAY TO REFRESH / RESIZING WILL CHANGE THESE VALUES
-
-    //GET THE TOP POSITION FOR EACH SNAP SECTION
-
-    //ADD THOSE VALUES TO THE ARRAY
+    snap = [];
+    $('.snap').each(function() {
+        snap.push(Math.floor($(this).offset().top));
+    });
 
 }
 
@@ -99,17 +97,22 @@ function sceneSnap(){
         $.data(this, 'scrollTimer', setTimeout(function(){
             autoScrl = true;
             
-            //GET WINDOW SCROLL POSITION
+            let windowPos = $(window).scrollTop();
+            let scrollLimit = 200;
+            let snapTo;
 
-            //LET VARIABLE = POSITION TO SCROLL TO
+            //LOOP THROUGH ARRAY / .each() WON'T WORK HERE
+            for(i = 0; i < snap.length; i++) {
+                if(windowPos >= (snap[i] - scrollLimit) && windowPos <= (snap[i] + scrollLimit)) {
+                    snapTo = snap[i];
+                }
+            }
 
-            //RUN THROUGH ARRAY AND COMPARE WINDOW SCROLL POSITION VS EACH
-
-            //SET CONDITION TO CHECK WITHIN A PIXEL RANGE
-
-            //SCROLL WINDOW (HTML, BODY) TO THAT POSITION
-
-            //TURN OFF autoScrl TO REACTIVATE
+            $("html, body").scrollTop(snapTo);
+            
+            setTimeout(function(){
+                autoScrl = false;
+            },1000);
 
         }, 1000));
     }
