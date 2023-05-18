@@ -5,10 +5,12 @@ $(document).ready(function(){
     navBar();
     footer();
     voidBlankLinks();
+    getWinDim();
 });
 
 //RUN ON PAGE LOADED
 $(window).on('load',function(){
+    hideNavBar();
     setSnapPos();
     sceneSnap();
     setFrameHeights();
@@ -18,6 +20,7 @@ $(window).on('load',function(){
 
 //RUN WHEN WINDOW IS RESIZED
 $(window).on('resize',function(){
+    getWinDim();
     setSnapPos();
     setStoryPos();
 });
@@ -25,6 +28,7 @@ $(window).on('resize',function(){
 //RUN WHEN PAGE IS SCROLLED
 //THIS INCLUDES SCROLLING OF ANY KIND (NOT JUST USER CONTROLLED)
 $(window).on('scroll',function(){
+    hideNavBar();
     storyReveal();
     sceneSnap();
 });
@@ -61,6 +65,33 @@ function navBar() {
     }
 };
 
+var ww, wh, loc, dir = 0;
+function getWinDim(){
+    ww = $(window).width();
+    wh = $(window).height();
+}
+
+//HIDE NAVBAR
+function hideNavBar() {
+
+    if(!autoScrl){
+        loc = $(window).scrollTop();
+        if($(window).scrollTop() > wh){
+            if(loc >= dir){
+                $('nav').addClass('out');
+            } else {
+                $('nav').removeClass('out');
+            }
+        } else {
+            $('nav').removeClass('out');
+        }
+    
+        dir = loc;
+    }
+
+
+}
+
 //WRITE FOOTER
 function footer(){
     const template = `
@@ -86,7 +117,7 @@ function footer(){
 function setSnapPos(){
     snap = [];
     $('.snap').each(function() {
-        snap.push(Math.floor($(this).offset().top));
+        snap.push(Math.ceil($(this).offset().top));
     });
 
 }
@@ -112,7 +143,7 @@ function sceneSnap(){
             
             setTimeout(function(){
                 autoScrl = false;
-            },1000);
+            },500);
 
         }, 1000));
     }

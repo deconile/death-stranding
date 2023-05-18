@@ -114,3 +114,70 @@
     90% {transform:translateX(100%)}
     95% {transform:translateX(0%)}
 }
+
+
+
+
+/* ICONS ****************************************************/
+
+/* STRUCTURE */
+.icons.stack {
+    display:grid;
+    gap:8px;
+}
+
+
+/* ICONS */
+
+.icon {
+    font-size:32px;
+    color: #FFF9;
+}
+
+.icon.xxs {font-size:8px;}
+.icon.xs {font-size:16px;}
+.icon.sm {font-size:24px;}
+.icon.lg {font-size:48px;}
+.icon.xl {font-size:64px;}
+
+.icon.box {
+    display:grid;
+    grid-template-rows: 2px auto 2px;
+    width:48px;
+    height:48px;
+    transition: 1000ms;
+}
+
+.icon.xxs {width:16px;height:16px;}
+.icon.xs {width:24px;height:24px;}
+.icon.sm {width:32px;height:32px;}
+.icon.lg {width:64px;height:64px;}
+.icon.xl {width:80px;height:80px;}
+
+.icon.box div {
+    display:flex;
+    justify-content: space-between;
+}
+
+.icon.box .icn {
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+}
+
+.icon.box.out {
+    width:4px;
+    height:4px;
+}
+
+.icon.box div:first-child::before,
+.icon.box div:first-child::after,
+.icon.box div:last-child::before,
+.icon.box div:last-child::after {
+    content:'';
+    position:relative;
+    display:block;
+    width:2px;
+    height:2px;
+    background-color:#FFF;
+}

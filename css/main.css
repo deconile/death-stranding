@@ -208,6 +208,11 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 10;
+    transition:1000ms;
+}
+
+nav.out {
+    transform: translateY(-100%);
 }
 
 nav .logo {
