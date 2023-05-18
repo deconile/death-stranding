@@ -6,6 +6,28 @@
 .snail,.snail::before,.snail::after {animation-duration: 5000ms;}
 
 
+/* INTERFACE ****************************************/
+#interface{
+    position: fixed;
+    display: grid;
+    justify-content: center;
+    align-items:center;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows:  auto 1fr auto;
+    width:100%;
+    height:100%;
+    z-index:9;
+    pointer-events: none;
+}
+
+#interface > div {
+    padding: 8px;
+    height: 100%;
+}
+
+#interface > div.top {align-self: flex-start;}
+
+
 /* PIPS **************************************/
 .pip,.pip.stacked {position:relative;}
 
@@ -181,3 +203,26 @@
     height:2px;
     background-color:#FFF;
 }
+
+
+
+/* LINES **********************************/
+
+.line {background-color:#FFFC;}
+
+.line.ver {
+    width:1px;
+    height:100%;
+}
+
+.line.hor {
+    width:100%;
+    height:1px;
+}
+
+
+
+
+
+
+
