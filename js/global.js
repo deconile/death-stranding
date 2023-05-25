@@ -16,6 +16,7 @@ $(window).on('load',function(){
     setFrameHeights();
     setStoryPos();
     storyReveal();
+    lineVibTimer();
 });
 
 //RUN WHEN WINDOW IS RESIZED
@@ -38,9 +39,15 @@ $(window).on('scroll',function(){
 var snap = [];
 var story = [];
 var autoScrl = false;
+var ww, wh, loc, dir = 0;
 
+//GET WINDOW DIMENSIONS  ******************************************************/
+function getWinDim(){
+    ww = $(window).width();
+    wh = $(window).height();
+}
 
-//WRITE NAV BAR
+//WRITE NAV BAR  ******************************************************/
 function navBar() {
     //WRITE HTML / TEMPALTES
     $('body').prepend(`<nav></nav>`);
@@ -65,34 +72,29 @@ function navBar() {
     }
 };
 
-var ww, wh, loc, dir = 0;
-function getWinDim(){
-    ww = $(window).width();
-    wh = $(window).height();
-}
-
-//HIDE NAVBAR
+//HIDE NAVBAR ******************************************************/
 function hideNavBar() {
 
     if(!autoScrl){
         loc = $(window).scrollTop();
-        if($(window).scrollTop() > wh){
+        if($(window).scrollTop() > wh - 10){
             if(loc >= dir){
                 $('nav').addClass('out');
+                $('#interface').removeClass('reduce');
             } else {
                 $('nav').removeClass('out');
+                $('#interface').addClass('reduce');
             }
         } else {
             $('nav').removeClass('out');
+            $('#interface').addClass('reduce');
         }
     
         dir = loc;
     }
-
-
 }
 
-//WRITE FOOTER
+//WRITE FOOTER ******************************************************/
 function footer(){
     const template = `
     <footer>
@@ -113,13 +115,12 @@ function footer(){
     $('body').append(template);
 }
 
-//SNAP SCENES
+//SNAP SCENES ******************************************************/
 function setSnapPos(){
     snap = [];
     $('.snap').each(function() {
         snap.push(Math.ceil($(this).offset().top));
     });
-
 }
 
 function sceneSnap(){
@@ -150,7 +151,7 @@ function sceneSnap(){
 }
 
 
-//FRAMED CONTAINER REVEALS
+//FRAMED CONTAINER REVEALS ******************************************************/
 function setFrameHeights(){
     let frame = $('section.story').find('.frame');
     let fh = Math.floor(frame.outerHeight());
@@ -164,7 +165,7 @@ function setFrameHeights(){
 }
 
 
-//STORY CONTENT REVEALS
+//STORY CONTENT REVEALS ******************************************************/
 function setStoryPos(){
     story = [];
     $('section.story').each(function(){
@@ -191,10 +192,21 @@ function storyReveal(){
 
 
 
+//AESTHETICS ******************************************************/
+    
+function lineVibTimer(){
+    let timer = (Math.floor(Math.random() * 10) + 5) * 1000;
+    setTimeout(() => {
+        $('.line.anime').addClass('vib');
+        setTimeout(() => {
+            $('.line.anime').removeClass('vib');
+            lineVibTimer();
+        }, 1000);
+    }, timer);
+}
 
 
-
-//SETS CLICK OVERRIDE TO PREVENT PAGE RELOAD ON BLANK LINKS
+//SETS CLICK OVERRIDE TO PREVENT PAGE RELOAD ON BLANK LINKS ******************************************************/
 function voidBlankLinks(){
     $('a').each(function(){
         if($(this).attr('href') === ''){
