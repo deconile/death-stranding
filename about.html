@@ -1,20 +1,72 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-page="about">
     <head>
 
         <title>Death Stranding : About</title>
 
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/aesthetics.css">
 
         <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/3dd4d3e2df.js" crossorigin="anonymous"></script>
         <script src="js/global.js"></script>
+        <script src="js/interface.js"></script>
+        <script src="js/components.js"></script>
 
     </head>
 
     <body>
 
-        
+        <div id="interface" class="reduce">
+            <!-- top row -->
+            <div>
+                <div class="pip lg"></div>
+            </div>
+            <div></div>
+            <div>
+                <div class="pip lg"></div>
+            </div>
+
+            <!-- middle row -->
+            <div class="flex column gap-sm">
+                <div class="icons stack">
+                    <div class="icon box sm">
+                        <div></div>
+                        <div class="icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div></div>
+                    </div>
+                    <div class="icon box sm">
+                        <div></div>
+                        <div class="icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div></div>
+                    </div>
+                    <div class="icon box sm">
+                        <div></div>
+                        <div class="icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="line anime ver center"></div>
+            </div>
+            <div id="center"></div>
+            <div class="side-nav"></div>
+
+            <!-- bottom -->
+            <div>
+                <div class="pip lg stacked mar-b-sm"></div>
+            </div>
+            <div>
+                <div class="pip lg runner-x snail left mar-b-sm"></div>
+            </div>
+            <div>
+                <div class="pip lg stacked mar-b-sm"></div>
+            </div>
+        </div>
+
+        <section style="height:100%;background-color:#999;"></section>
+        <section style="height:100%;background-color:blue;"></section>
+        <section style="height:100%"></section>
 
     </body>
 </html>

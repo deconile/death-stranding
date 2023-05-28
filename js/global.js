@@ -11,6 +11,8 @@ $(document).ready(function(){
 //RUN ON PAGE LOADED
 $(window).on('load',function(){
     hideNavBar();
+    getSceneStart();
+    //sectionOnLoad();
     setSnapPos();
     sceneSnap();
     setFrameHeights();
@@ -30,6 +32,7 @@ $(window).on('resize',function(){
 //THIS INCLUDES SCROLLING OF ANY KIND (NOT JUST USER CONTROLLED)
 $(window).on('scroll',function(){
     hideNavBar();
+    getSection();
     storyReveal();
     sceneSnap();
 });
@@ -38,6 +41,8 @@ $(window).on('scroll',function(){
 //GLOBAL VARIABLES
 var snap = [];
 var story = [];
+var sectionsTop = [];
+var sectionNum = 0;
 var autoScrl = false;
 var ww, wh, loc, dir = 0;
 
@@ -56,13 +61,13 @@ function navBar() {
 
     let titles = ['Home','About','Buy Now','Media','Blog','Community'];
     let urls = ['index.html','about.html','buy-now.html','media.html','blog.html','community.html'];
-    let loc = window.location.href.split('/');
-    loc = loc[loc.length - 1];
+    let page = window.location.href.split('/');
+    page = page[page.length - 1];
     
     for(i = 0; i < titles.length; i++){
         let temp = `<li><a href="${urls[i]}">${titles[i]}</a></li>`
         $('nav').find('ul').append(temp);
-        if(loc === urls[i]){
+        if(page === urls[i]){
             $('nav').find('li').eq(i).addClass('active');
         }
     }
@@ -114,6 +119,41 @@ function footer(){
     `
     $('body').append(template);
 }
+
+
+// GET SECTION TOP OFFSETS ***********************************/
+function getSceneStart() {
+  $('section').each(function () {
+    let top = Math.ceil($(this).offset().top);
+    sectionsTop.push(top);
+  });
+}
+
+//GET CURRENT SECTION ON LOAD
+//FIX THE ONLOAD, IGNORE IF at SCROLL TOP 0 ******************************************************/
+function sectionOnLoad(){
+
+    for(s = 0; s < sectionsTop.length; s++){
+        if($(window).scrollTop() >= sectionsTop[s]){
+            sectionNum++
+        } else {
+            break;
+        }
+    }
+    swapIcons();
+}
+
+//GET CURRENT SECTION ******************************************************/
+function getSection(){
+    if($(window).scrollTop() >= sectionsTop[sectionNum + 1]){
+        sectionNum++;
+        swapIcons();
+    } else if($(window).scrollTop() <= sectionsTop[sectionNum - 1]){
+        sectionNum--;
+        swapIcons();
+    }
+}
+
 
 //SNAP SCENES ******************************************************/
 function setSnapPos(){
@@ -174,7 +214,7 @@ function setStoryPos(){
 }
 
 function storyReveal(){
-    section = $('section.story');
+    let section = $('section.story');
     if(section.find('.out').length > 0){
         for(s = 0; s < story.length; s++){
             if($(window).scrollTop() >= story[s] - 100){
