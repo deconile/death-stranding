@@ -30,8 +30,6 @@ function swapIcons(){
   $('#interface').find('.line.anime').addClass('out');
 
   setTimeout(function(){
-
-
     //FIRST: FIND PAGE WE ARE ON index, about, etc.
     //THEN BASED ON SCENE (sectionNum), find that array index.
     //THEN REPLACE WITH ARRAY INDEXES
@@ -69,3 +67,4 @@ const iconSet = {
   blog: [],
   community: [],
 };
+
