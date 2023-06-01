@@ -1,6 +1,6 @@
 //RUN ON DOCUMENT READY
 $(document).ready(function () {
-
+  loadIcons();
 });
 
 //RUN ON PAGE LOADED
@@ -21,28 +21,28 @@ $(window).on("scroll", function () {
 var dataKey = $('html').attr('data-page');
 
 
+//LOAD ICONS 
+function loadIcons(){
+  let icon = $('#interface').find('.icon');
+  for(i = 0; i < iconSet[dataKey][sectionNum].length; i++){
+    icon.eq(i).find('.icn').html(iconSet[dataKey][sectionNum][i]);
+  }
+}
+
+
 //SWAP ICONS
 function swapIcons(){
-
-  let icon = $('#interface').find('.icon');
-
   $('#interface').find('.icon').addClass('out');
   $('#interface').find('.line.anime').addClass('out');
 
   setTimeout(function(){
-    //FIRST: FIND PAGE WE ARE ON index, about, etc.
-    //THEN BASED ON SCENE (sectionNum), find that array index.
-    //THEN REPLACE WITH ARRAY INDEXES
 
-    for(i = 0; i < iconSet[dataKey][sectionNum].length; i++){
-      icon.eq(i).find('.icn').html(iconSet[dataKey][sectionNum][i]);
-    }
+    loadIcons();
 
     $('#interface').find('.icon').removeClass('out');
     $('#interface').find('.line.anime').removeClass('out');
     
   },1000);
-
 }
 
 const iconSet = {
@@ -50,14 +50,14 @@ const iconSet = {
     ['<i class="fa-solid fa-person-rays"></i>', '<i class="fa-solid fa-skull"></i>', '<i class="fa-solid fa-baby"></i>'], 
     ['<i class="fa-solid fa-person-walking-luggage"></i>', '<i class="fa-solid fa-explosion"></i>', '<i class="fa-solid fa-people-group"></i>'], 
     ['<i class="fa-solid fa-barcode"></i>', '<i class="fa-solid fa-gamepad"></i>', '<i class="fa-solid fa-floppy-disk"></i>'],
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', ''],
+    ['<i class="fa-solid fa-image"></i>', '<i class="fa-solid fa-diamond"></i>', '<i class="fa-solid fa-motorcycle"></i>'],
+    ['<i class="fa-solid fa-cubes-stacked"></i>', '<i class="fa-solid fa-circle-info"></i>', '<i class="fa-solid fa-newspaper"></i>'],
+    ['<i class="fa-solid fa-mountain-sun"></i>', '<i class="fa-solid fa-hill-rockslide"></i>', '<i class="fa-brands fa-cloudflare"></i>'],
   ],
   about: [
-    ['<i class="fa-solid fa-person-walking-luggage"></i>', '<i class="fa-solid fa-explosion"></i>', '<i class="fa-solid fa-people-group"></i>'], 
-    ['<i class="fa-solid fa-person-rays"></i>', '<i class="fa-solid fa-skull"></i>', '<i class="fa-solid fa-baby"></i>'],
-    ['<i class="fa-solid fa-barcode"></i>', '<i class="fa-solid fa-gamepad"></i>', '<i class="fa-solid fa-floppy-disk"></i>'],
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', ''],
     ['', '', ''],
     ['', '', ''],
     ['', '', ''],

@@ -12,7 +12,6 @@ $(document).ready(function(){
 $(window).on('load',function(){
     hideNavBar();
     getSceneStart();
-    //sectionOnLoad();
     setSnapPos();
     sceneSnap();
     setFrameHeights();
@@ -45,6 +44,7 @@ var sectionsTop = [];
 var sectionNum = 0;
 var autoScrl = false;
 var ww, wh, loc, dir = 0;
+
 
 //GET WINDOW DIMENSIONS  ******************************************************/
 function getWinDim(){
@@ -145,13 +145,17 @@ function sectionOnLoad(){
 
 //GET CURRENT SECTION ******************************************************/
 function getSection(){
+    
+    let buffer = (sectionsTop[sectionNum] - sectionsTop[sectionNum - 1]) / 3;
+
     if($(window).scrollTop() >= sectionsTop[sectionNum + 1]){
         sectionNum++;
         swapIcons();
-    } else if($(window).scrollTop() <= sectionsTop[sectionNum - 1]){
+    } else if($(window).scrollTop() <= sectionsTop[sectionNum - 1] + buffer){
         sectionNum--;
         swapIcons();
     }
+
 }
 
 
