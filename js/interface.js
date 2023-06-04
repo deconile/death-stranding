@@ -32,17 +32,21 @@ function loadIcons(){
 
 //SWAP ICONS
 function swapIcons(){
-  $('#interface').find('.icon').addClass('out');
-  $('#interface').find('.line.anime').addClass('out');
+  let col = $('#interface').find('#left-side');
+  col.find('.line.anime').addClass('out');
+
+  setTimeout(function(){
+    col.find('.icon').addClass('out');
+  },250);
 
   setTimeout(function(){
     loadIcons();
-    $('#interface').find('.icon').removeClass('out');
+    col.find('.icon').removeClass('out');
   },1000);
 
   setTimeout(function(){
-    $('#interface').find('.line.anime').removeClass('out');
-  },2000);
+    col.find('.line.anime').removeClass('out');
+  },1500);
 }
 
 const iconSet = {

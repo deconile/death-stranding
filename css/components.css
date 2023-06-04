@@ -253,7 +253,6 @@
 }
 
 
-
 /* IMAGE REVEAL *************************************/
 .image-reveal {
     overflow:hidden;
@@ -271,4 +270,53 @@
     height:100%;
     object-fit: cover;
     object-position: top center;
+}
+
+
+
+
+/* SIDE NAV *************************************/
+
+#right-side {
+    position: relative;
+}
+
+.side-nav {
+    height: 100%;
+    position: absolute;
+    right: 8px;
+}
+
+.side-nav .gutter {
+    background-color: var(--gray-500);
+}
+
+.side-nav .progress {
+    position: absolute;
+    right: 12px;
+}
+
+
+
+/* NAV OPTIONS */
+.side-nav .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.side-nav .nav .nav-option {
+    display: flex;
+    gap: 4px;
+}   
+
+.side-nav .bubble {
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--gray-100);
+    background-color: var(--gray-500);
+    border-radius: 12px;
+    transition:1000ms;
+    transform:rotateZ(-90deg);
 }

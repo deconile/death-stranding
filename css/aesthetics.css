@@ -220,7 +220,7 @@
 .line {
     width:1px;
     height:1px;
-    background-image:linear-gradient(#FFF9, #FFF9);
+    background-color:var(--gray-100);
     transition: 500ms;
 }
 

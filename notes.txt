@@ -1,0 +1,9 @@
+Bubble's state
+1. Have a specific absolute top height;
+2. Progress bar moving based on section height;
+
+Icon's state
+1. Icons loaded in first;
+2. Icons load with "X" then switches to icon when scrolled on;
+
+Show and hide nav background
