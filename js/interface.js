@@ -36,13 +36,13 @@ function swapIcons(){
   $('#interface').find('.line.anime').addClass('out');
 
   setTimeout(function(){
-
     loadIcons();
-
     $('#interface').find('.icon').removeClass('out');
-    $('#interface').find('.line.anime').removeClass('out');
-    
   },1000);
+
+  setTimeout(function(){
+    $('#interface').find('.line.anime').removeClass('out');
+  },2000);
 }
 
 const iconSet = {

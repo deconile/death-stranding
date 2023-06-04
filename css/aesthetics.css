@@ -176,7 +176,7 @@
     grid-template-rows: 2px auto 2px;
     width:48px;
     height:48px;
-    transition: 1000ms;
+    transition: 750ms;
 }
 
 .icon.xxs {width:16px;height:16px;}
@@ -218,10 +218,10 @@
 /* LINES **********************************/
 
 .line {
-    width:2px;
-    height:2px;
+    width:1px;
+    height:1px;
     background-image:linear-gradient(#FFF9, #FFF9);
-    transition: 1000ms;
+    transition: 500ms;
 }
 
 .line.fade.right {background-image:linear-gradient(to left, #FFF9 10%, transparent)}
