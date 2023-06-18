@@ -1,9 +1,13 @@
 Bubble's state
-1. Have a specific absolute top height;
-2. Progress bar moving based on section height;
+1. Have a specific absolute top height; V
+2. Progress bar moving based on section height; V
+3. Change bubble state on active and hover;
+4. Light up when progress bar hits bubble;
 
 Icon's state
 1. Icons loaded in first;
 2. Icons load with "X" then switches to icon when scrolled on;
+3. Change icons based on hover state;
 
-Show and hide nav background
+Show and hide side nav background;
+Scroll to when side nav is clicked;

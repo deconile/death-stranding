@@ -23,6 +23,7 @@ $(window).on('load',function(){
 //RUN WHEN WINDOW IS RESIZED
 $(window).on('resize',function(){
     getWinDim();
+    getSceneStart();
     setSnapPos();
     setStoryPos();
 });
@@ -46,11 +47,14 @@ var autoScrl = false;
 var ww, wh, loc, dir = 0;
 
 
+
 //GET WINDOW DIMENSIONS  ******************************************************/
-function getWinDim(){
+function getWinDim() {
     ww = $(window).width();
     wh = $(window).height();
 }
+
+
 
 //WRITE NAV BAR  ******************************************************/
 function navBar() {
@@ -123,6 +127,7 @@ function footer(){
 
 // GET SECTION TOP OFFSETS ***********************************/
 function getSceneStart() {
+    sectionsTop = [];
   $('section').each(function () {
     let top = Math.ceil($(this).offset().top);
     sectionsTop.push(top);

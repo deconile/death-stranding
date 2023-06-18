@@ -34,7 +34,7 @@
     transform: rotateZ(135deg);
 }
 
-.nav {
+.pagination .nav {
     cursor:pointer;
 }
 

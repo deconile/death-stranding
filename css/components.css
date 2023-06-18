@@ -285,6 +285,7 @@
     height: 100%;
     position: absolute;
     right: 8px;
+    pointer-events: auto;
 }
 
 .side-nav .gutter {
@@ -311,7 +312,7 @@
     gap: 4px;
 }   
 
-.side-nav .bubble {
+.side-nav .nav-option .bubble {
     width: 25px;
     height: 25px;
     border: 1px solid var(--gray-100);
@@ -319,4 +320,16 @@
     border-radius: 12px;
     transition:1000ms;
     transform:rotateZ(-90deg);
+    cursor:pointer;
 }
+
+.side-nav .nav-option.active .bubble {
+    width: 22px;
+    height: 22px;
+    background-color: var(--gray-200);
+    border-radius: 0;
+    transform: rotateZ(-45deg) translateX(2px);
+    position:relative;
+    top:2px;
+}
+
