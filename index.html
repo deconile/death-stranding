@@ -7,15 +7,17 @@
 
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/components.css">
-        <link rel="stylesheet" href="css/carousel.css">
         <link rel="stylesheet" href="css/scenes.css">
         <link rel="stylesheet" href="css/aesthetics.css">
+        <link rel="stylesheet" href="css/carousel.css">
 
         <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/3dd4d3e2df.js" crossorigin="anonymous"></script>
         <script src="js/global.js"></script>
         <script src="js/interface.js"></script>
         <script src="js/components.js"></script>
+        <script src="js/invoke.js"></script>
+
         <script src="js/carousel.js"></script>
         <script src="js/blog-data.js"></script>
 
@@ -36,17 +38,17 @@
             <!-- middle row -->
             <div id="left-side" class="flex column gap-sm">
                 <div class="icons stack">
-                    <div class="icon box sm">
+                    <div class="icon box xs">
                         <div></div>
                         <div class="icn"><i class="fa-solid fa-xmark"></i></div>
                         <div></div>
                     </div>
-                    <div class="icon box sm">
+                    <div class="icon box xs">
                         <div></div>
                         <div class="icn"><i class="fa-solid fa-xmark"></i></div>
                         <div></div>
                     </div>
-                    <div class="icon box sm">
+                    <div class="icon box xs">
                         <div></div>
                         <div class="icn"><i class="fa-solid fa-xmark"></i></div>
                         <div></div>
@@ -61,63 +63,7 @@
                     <div class="progress line ver gutter">
                         <div class="line ver"></div>
                     </div>
-                    <div class="nav">
-
-                        <div class="nav-option active">
-                            <div class="icon box xs">
-                                <div></div>
-                                <div class="icn"><i class="fa-solid fa-xmark"></i></div>
-                                <div></div>
-                            </div>
-                            <div class="bubble"></div>
-                        </div>
-
-                        <div class="nav-option active">
-                            <div class="icon box xs">
-                                <div></div>
-                                <div class="icn"><i class="fa-solid fa-xmark"></i></div>
-                                <div></div>
-                            </div>
-                            <div class="bubble"></div>
-                        </div>
-
-                        <div class="nav-option">
-                            <div class="icon box xs">
-                                <div></div>
-                                <div class="icn"><i class="fa-solid fa-xmark"></i></div>
-                                <div></div>
-                            </div>
-                            <div class="bubble"></div>
-                        </div>
-
-                        <div class="nav-option">
-                            <div class="icon box xs">
-                                <div></div>
-                                <div class="icn"><i class="fa-solid fa-xmark"></i></div>
-                                <div></div>
-                            </div>
-                            <div class="bubble"></div>
-                        </div>
-
-                        <div class="nav-option">
-                            <div class="icon box xs">
-                                <div></div>
-                                <div class="icn"><i class="fa-solid fa-xmark"></i></div>
-                                <div></div>
-                            </div>
-                            <div class="bubble"></div>
-                        </div>
-
-                        <div class="nav-option">
-                            <div class="icon box xs">
-                                <div></div>
-                                <div class="icn"><i class="fa-solid fa-xmark"></i></div>
-                                <div></div>
-                            </div>
-                            <div class="bubble"></div>
-                        </div>
-
-                    </div>
+                    <div class="nav"></div>
                 </div>
 
             </div>
@@ -145,7 +91,7 @@
                     <div class="absolute center">
                         <div class="cta">
                             <div class="button-container">
-                                <div class="button condensed tilt"><a href="buy-now.html">Buy Now</a></div>
+                                <div class="button condensed tilt"><a onclick="goToBuy()">Buy Now</a></div>
                             </div>
                             <div class="logos">
                                 <div><img src="images/logos/steam-white.png" /></div>
@@ -157,31 +103,32 @@
             </div>
         </section>
 
-        <section id="story" class="full parallax snap story">
-            <div class="container overlay left middle half">
-                <div class="content">
-                    <div class="frame-container">
-                        <div class="frame out">
-                            <div class="pip sm"></div>
-                            <div></div>
-                            <div class="pip lg"></div>
-                            <div></div>
-                            <div class="text">
-                                <div class="container">
-                                    <h1>A World Forever Changed</h1>
-                                    <p>From legendary game creator Hideo Kojima comes a critically acclaimed, genre-defying open world action adventure for PC, starring Norman Reedus, Mads Mikkelsen, Léa Seydoux and Lindsay Wagner.</p>
-                                    <p>In the near future, mysterious explosions have rocked the globe, setting off a series of supernatural events known as the Death Stranding. With otherworldly creatures plaguing the landscape, and mass extinction imminent, it's up to Sam Porter Bridges to travel across the ravaged wasteland and save humanity from impending annihilation.</p>
+        <section id="story" class="full snap story">
+            <div class="overlay left">
+                <div class="container left middle half">
+                    <div class="content">
+                        <div class="frame-container">
+                            <div class="frame out">
+                                <div class="pip sm"></div>
+                                <div></div>
+                                <div class="pip lg"></div>
+                                <div></div>
+                                <div class="text">
+                                    <div class="container">
+                                        <h1>A World Forever Changed</h1>
+                                        <p>From legendary game creator Hideo Kojima comes a critically acclaimed, genre-defying open world action adventure for PC, starring Norman Reedus, Mads Mikkelsen, Léa Seydoux and Lindsay Wagner.</p>
+                                    </div>
                                 </div>
+                                <div></div>
+                                <div class="pip md stacked"></div>
+                                <div><div class="pip md runner-x slow"></div></div>
+                                <div class="pip md stacked"></div>
                             </div>
-                            <div></div>
-                            <div class="pip md stacked"></div>
-                            <div><div class="pip md runner-x slow"></div></div>
-                            <div class="pip md stacked"></div>
                         </div>
-                    </div>
-                    <div class="mar-t-lg left">
-                        <div class="button-container">
-                            <div class="button condensed secondary tilt out"><a href="about.html">More About The Death Stranding</a></div>
+                        <div class="mar-t-lg left">
+                            <div class="button-container">
+                                <div class="button condensed secondary tilt out"><a href="about.html">More About The Death Stranding</a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,25 +136,27 @@
         </section>
 
         <section id="purchase" class="full snap">
-            <div class="overlay container center middle">
-                <div class="content limited">
-                    <div class="center text-center">
-                        <h1>Death Stranding: Director's Cut</h1>
-                        <h4 class="bold primary">Available for Digital Download or Upgade</h4>
-                    </div>
-                    <div class="cols spaced mar-t-md">
-                        <div class="content-box-container">
-                            <div class="content-box buy tilt" onclick="window.location.href = 'buy-now.html'">
-                                <div class="label">Death Stranding : Director's Cut</div>
-                                <div class="image"><img src="images/cover-dc.jpg" /></div>
-                                <div class="button"><a href="buy-now.html">Buy Director's Cut</a></div>
-                            </div>
+            <div class="overlay">
+                <div class="container center middle">
+                    <div class="content limited">
+                        <div class="center text-center">
+                            <h1>Death Stranding: Director's Cut</h1>
+                            <h4 class="bold primary">Available for Digital Download or Upgade</h4>
                         </div>
-                        <div class="content-box-container">
-                            <div class="content-box buy tilt rev" onclick="window.location.href = 'buy-now.html'">
-                                <div class="label">Death Stranding : Upgrade</div>
-                                <div class="image"><img src="images/cover-upgrade.jpg" /></div>
-                                <div class="button"><a href="buy-now.html">Upgrade to Director's Cut</a></div>
+                        <div class="cols spaced mar-t-md">
+                            <div class="content-box-container">
+                                <div class="content-box buy tilt" onclick="">
+                                    <div class="label">Death Stranding : Director's Cut</div>
+                                    <div class="image"><img src="images/cover-dc.jpg" /></div>
+                                    <div class="button"><a href="">Buy Director's Cut</a></div>
+                                </div>
+                            </div>
+                            <div class="content-box-container">
+                                <div class="content-box buy tilt rev" onclick="">
+                                    <div class="label">Death Stranding : Upgrade</div>
+                                    <div class="image"><img src="images/cover-upgrade.jpg" /></div>
+                                    <div class="button"><a href="">Upgrade to Director's Cut</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -216,57 +165,62 @@
         </section>
 
         <section id="image-carousel" class="carousel full snap">
-            <div class="container overflow">
-                <div class="content images overflow">
-                    <div><div><img src="images/carousel-1.jpg" /></div></div>
-                    <div><div><img src="images/carousel-2.jpg" /></div></div>
-                    <div><div><img src="images/carousel-3.jpg" /></div></div>
-                    <div><div><img src="images/carousel-4.jpg" /></div></div>
-                    <div><div><img src="images/carousel-5.jpg" /></div></div>
-                    <div><div><img src="images/carousel-6.jpg" /></div></div>
-                    <div><div><img src="images/carousel-7.jpg" /></div></div>
-                    <div><div><img src="images/carousel-8.jpg" /></div></div>
-                </div>
-                <div class="pagination overlay bottom">
-                    <div class="control nav prev"><div></div></div>
-                    <div class="bubbles"></div>
-                    <div class="control nav next"><div></div></div>
+            <div class="overlay none">
+                <div class="container overflow">
+                    <div class="content images overflow">
+                        <div><div><img src="images/carousel-1.jpg" /></div></div>
+                        <div><div><img src="images/carousel-2.jpg" /></div></div>
+                        <div><div><img src="images/carousel-3.jpg" /></div></div>
+                        <div><div><img src="images/carousel-4.jpg" /></div></div>
+                        <div><div><img src="images/carousel-5.jpg" /></div></div>
+                        <div><div><img src="images/carousel-6.jpg" /></div></div>
+                        <div><div><img src="images/carousel-7.jpg" /></div></div>
+                        <div><div><img src="images/carousel-8.jpg" /></div></div>
+                    </div>
+                    <div class="pagination overlay bottom">
+                        <div class="control nav prev"><div></div></div>
+                        <div class="bubbles"></div>
+                        <div class="control nav next"><div></div></div>
+                    </div>
                 </div>
             </div>
         </section>
 
 
         <section id="blog-carousel" class="carousel gradient-dark">
-            <div class="container overflow">
-
-                <div class="content blog overflow blog-content"></div>
-                <div class="pagination condensed small">
-                    <div class="control nav prev"><div></div></div>
-                    <div class="bubbles"></div>
-                    <div class="control nav next"><div></div></div>
-                </div>
-                <div class="condensed mar-t-lg">
-                    <div class="button-container">
-                        <div class="button secondary"><a href="blog.html">View All Articles</a></div>
+            <div class="overlay none">
+                <div class="container overflow">
+                    <div class="content blog overflow blog-content"></div>
+                    <div class="pagination condensed small">
+                        <div class="control nav prev"><div></div></div>
+                        <div class="bubbles"></div>
+                        <div class="control nav next"><div></div></div>
+                    </div>
+                    <div class="condensed mar-t-lg">
+                        <div class="button-container">
+                            <div class="button secondary"><a href="blog.html">View All Articles</a></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="closer" class="full parallax snap story">
-            <div class="container overlay bottom">
-                <div class="absolute">
-                    <div class="title">
-                        <div class="image-reveal out"><img src="images/logos/logo-drip-black.png"></div>
+        <section id="closer" class="full snap story">
+            <div class="overlay bottom">
+                <div class="container bottom center">
+                    <div class="absolute">
+                        <div class="title">
+                            <div class="image-reveal out"><img src="images/logos/logo-drip-black.png"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="cta">
-                    <div class="button-container">
-                        <div class="button condensed tilt"><a href="buy-now.html">Buy Now</a></div>
-                    </div>
-                    <div class="logos">
-                        <div><img src="images/logos/steam-white.png" /></div>
-                        <div><img src="images/logos/logo_epic.png" /></div>
+                    <div class="cta">
+                        <div class="button-container">
+                            <div class="button condensed tilt"><a onclick="goToBuy()">Buy Now</a></div>
+                        </div>
+                        <div class="logos">
+                            <div><img src="images/logos/steam-white.png" /></div>
+                            <div><img src="images/logos/logo_epic.png" /></div>
+                        </div>
                     </div>
                 </div>
             </div>

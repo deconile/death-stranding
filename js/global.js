@@ -1,43 +1,4 @@
 
-
-//RUN ON DOCUMENT READY
-$(document).ready(function(){
-    navBar();
-    footer();
-    voidBlankLinks();
-    getWinDim();
-});
-
-//RUN ON PAGE LOADED
-$(window).on('load',function(){
-    hideNavBar();
-    getSceneStart();
-    setSnapPos();
-    sceneSnap();
-    setFrameHeights();
-    setStoryPos();
-    storyReveal();
-    lineVibTimer();
-});
-
-//RUN WHEN WINDOW IS RESIZED
-$(window).on('resize',function(){
-    getWinDim();
-    getSceneStart();
-    setSnapPos();
-    setStoryPos();
-});
-
-//RUN WHEN PAGE IS SCROLLED
-//THIS INCLUDES SCROLLING OF ANY KIND (NOT JUST USER CONTROLLED)
-$(window).on('scroll',function(){
-    hideNavBar();
-    getSection();
-    storyReveal();
-    sceneSnap();
-});
-
-
 //GLOBAL VARIABLES
 var snap = [];
 var story = [];
@@ -63,8 +24,8 @@ function navBar() {
     $('nav').prepend(`<div class="logo"><img src="images/logos/logo_kojima.png"></div>`);
     $('nav').append(`<ul></ul>`);
 
-    let titles = ['Home','About','Buy Now','Media','Blog','Community'];
-    let urls = ['index.html','about.html','buy-now.html','media.html','blog.html','community.html'];
+    let titles = ['Home','About','Story','Media','Community','Blog'];
+    let urls = ['index.html','about.html','story.html','media.html','community.html','blog.html'];
     let page = window.location.href.split('/');
     page = page[page.length - 1];
     
@@ -134,33 +95,31 @@ function getSceneStart() {
   });
 }
 
-//GET CURRENT SECTION ON LOAD
-//FIX THE ONLOAD, IGNORE IF at SCROLL TOP 0 ******************************************************/
-function sectionOnLoad(){
 
-    for(s = 0; s < sectionsTop.length; s++){
+//GET LOADED SECTION ******************************************************/
+function getSection(){
+    for(s = 1; s < sectionsTop.length; s++){
         if($(window).scrollTop() >= sectionsTop[s]){
-            sectionNum++
-        } else {
-            break;
+            sectionNum++;
         }
     }
-    swapIcons();
 }
 
+
 //GET CURRENT SECTION ******************************************************/
-function getSection(){
+function changeSection(){
     
     let buffer = (sectionsTop[sectionNum] - sectionsTop[sectionNum - 1]) / 3;
 
     if($(window).scrollTop() >= sectionsTop[sectionNum + 1]){
         sectionNum++;
         swapIcons();
+        loadIconsSideNav();
     } else if($(window).scrollTop() <= sectionsTop[sectionNum - 1] + buffer){
         sectionNum--;
         swapIcons();
+        loadIconsSideNav();
     }
-
 }
 
 
@@ -203,13 +162,13 @@ function sceneSnap(){
 //FRAMED CONTAINER REVEALS ******************************************************/
 function setFrameHeights(){
     let frame = $('section.story').find('.frame');
-    let fh = Math.floor(frame.outerHeight());
-    frame.parent().css('height',fh);
 
     frame.find('.text').each(function(){
-        let h = Math.floor($(this).outerHeight());
-        $(this).attr('data-height',h);
+        let fh = Math.floor($(this).outerHeight());
+        $(this).parent().css('height',fh);
+        $(this).attr('data-height',fh);
         $(this).css('height','0px');
+        $(this).parent().css('height','0px');
     });
 }
 
@@ -224,16 +183,17 @@ function setStoryPos(){
 
 function storyReveal(){
     let section = $('section.story');
-    if(section.find('.out').length > 0){
+    if(section.find('.frame.out').length > 0){
         for(s = 0; s < story.length; s++){
             if($(window).scrollTop() >= story[s] - 100){
                 //IF IT IS A FRAMED CONTAINER
                 if(section.eq(s).find('.out').hasClass('frame')){
                     let h = section.eq(s).find('.frame').find('.text').attr('data-height');
+                    section.eq(s).find('.frame').css('height',h);
                     section.eq(s).find('.frame').find('.text').css('height',h);
                     section.eq(s).find('.frame').addClass('glitch');
                 }
-                section.eq(s).find('.out').removeClass('out');
+                section.eq(s).find('.frame.out').removeClass('out');
             }
         }
     }

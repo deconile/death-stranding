@@ -163,6 +163,7 @@
 .icon {
     font-size:32px;
     color: #FFF9;
+    transition: 750ms;
 }
 
 .icon.xxs {font-size:8px;}
@@ -176,7 +177,6 @@
     grid-template-rows: 2px auto 2px;
     width:48px;
     height:48px;
-    transition: 750ms;
 }
 
 .icon.xxs {width:16px;height:16px;}

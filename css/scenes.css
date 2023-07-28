@@ -4,7 +4,10 @@
     background-image:linear-gradient(to bottom, var(--gray-700), var(--gray-800));
 }
 
+.story {background-attachment: fixed;}
+.scroll {background-attachment: scroll;}
 
+/* INDEX **************************************************/
 /* HERO *********************************/
 
 #hero {
@@ -36,7 +39,6 @@
 
 #story {
     background-image: url("../images/about-hero.jpg");
-    background-attachment: fixed;
     background-position:center left;
 }
 
@@ -44,11 +46,6 @@
 
 #purchase {
     background-image: url("../images/purchase-bg-1.jpg");
-    background-attachment: fixed;
-}
-
-#purchase .container {
-    gap: 128px;
 }
 
 
@@ -64,14 +61,42 @@
 #closer {
     background-image: url("../images/cover-bike.jpg");
     background-position:bottom center;
-    background-attachment:fixed;
 }
+#closer .absolute {max-width:500px;top:20%;right:10%;}
 
-#closer .absolute {
-    top:20%;
-    right:0;
-}
 
-#closer .title {
-    width:70%;
+
+/* ABOUT **************************************************/
+#about-purchase {background-image: url("../images/purchase-bg-2.jpg");}
+#about-expanded {background-image: url("../images/cover-expanded.jpg");}
+#about-strand {background-image: url("../images/cover-social-strand.jpg");}
+#about-more {background-image: url("../images/cover-fragile-1.jpg");}
+
+/* CLOSER ***************************/
+#about-closer {
+    background-image: url("../images/cover-about-closer.jpg");
+    background-position:bottom center;
 }
+#about-closer .absolute {max-width:500px;top:40%;left:10%;}
+
+
+/* STORY **************************************************/
+#bridget {background-image: url("../images/story/story-bridget.jpg");}
+#amalie {background-image: url("../images/story/story-amalie.jpg");}
+#demens {background-image: url("../images/story/story-demens.jpg");}
+#communities {background-image: url("../images/story/story-communities.jpg");}
+#hardman {background-image: url("../images/story/story-hardman.jpg");}
+#sam {background-image: url("../images/story/story-sam.jpg");}
+
+/* CLOSER ***************************/
+#story-closer {
+    background-image: url("../images/cover-beach.jpg");
+    background-position:bottom center;
+}
+#story-closer .absolute {max-width:500px;top:20%;right:10%;}
+
+
+
+/* MEDIA **************************************************/
+#media-hero {background-image: url("../images/media-hero.jpg");}
+#media-vids {background-image: url("../images/media-vids.jpg");}

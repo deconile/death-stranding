@@ -10,7 +10,7 @@ function blogPosts() {
         return $('.blog-content').append(`
             <div class="card">
                 <div class="flip">
-                    <div class="content-box front">
+                    <div class="content-box post front">
                         <div class="label">${title}</div>
                         <div class="image"><img src="${image}" /></div>
                         <div class="text">
