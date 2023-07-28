@@ -89,10 +89,10 @@ function footer(){
 // GET SECTION TOP OFFSETS ***********************************/
 function getSceneStart() {
     sectionsTop = [];
-  $('section').each(function () {
-    let top = Math.ceil($(this).offset().top);
-    sectionsTop.push(top);
-  });
+    $('section').each(function () {
+        let top = Math.ceil($(this).offset().top);
+        sectionsTop.push(top);
+    });
 }
 
 
@@ -200,7 +200,6 @@ function storyReveal(){
 }
 
 
-
 //AESTHETICS ******************************************************/
     
 function lineVibTimer(){
@@ -219,7 +218,7 @@ function lineVibTimer(){
 function voidBlankLinks(){
     $('a').each(function(){
         if($(this).attr('href') === ''){
-            $(this).attr('href','javascript:void();')
+            $(this).attr('href','javascript:void();');
         }
     });
 }

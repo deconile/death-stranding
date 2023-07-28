@@ -99,7 +99,7 @@
 }
 
 .content-box.buy .image {
-    height: 300px;
+    max-height: 300px;
 }
 
 .content-box .image img {
