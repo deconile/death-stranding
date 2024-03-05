@@ -2,7 +2,8 @@
 
 //GLOBAL VARAIBLES
 var dataKey = $('html').attr('data-page');
-var lastSec, progress;
+var dataKey, lastSec, progress;
+
 
 //LOAD INITIAL ICONS
 function loadInitIcons(){
@@ -133,6 +134,7 @@ const iconSet = {
   ],
   about: [
     ['<i class="fa-solid fa-person-walking-luggage"></i>', '<i class="fa-solid fa-explosion"></i>', '<i class="fa-solid fa-people-group"></i>'],
+    ['<i class="fa-solid fa-video"></i>', '<i class="fa-solid fa-person-hiking"></i>', '<i class="fa-solid fa-film"></i>'],
     ['<i class="fa-solid fa-tag"></i>', '<i class="fa-solid fa-gamepad"></i>', '<i class="fa-solid fa-clapperboard"></i>'],
     ['<i class="fa-solid fa-map-location-dot"></i>', '<i class="fa-solid fa-up-right-and-down-left-from-center"></i>', '<i class="fa-solid fa-gun"></i>'],
     ['<i class="fa-solid fa-people-group"></i>', '<i class="fa-solid fa-people-carry-box"></i>', '<i class="fa-solid fa-thumbs-up"></i>'],
@@ -145,10 +147,10 @@ const iconSet = {
     ['<i class="fa-solid fa-city"></i>', '<i class="fa-solid fa-person-military-rifle"></i>', '<i class="fa-solid fa-skull-crossbones"></i>'],
     ['<i class="fa-solid fa-charging-station"></i>', '<i class="fa-solid fa-diagram-project"></i>', '<i class="fa-solid fa-toggle-off"></i>'],
     ['<i class="fa-solid fa-skull"></i>', '<i class="fa-solid fa-handshake"></i>', '<i class="fa-solid fa-network-wired"></i>'],
-    ['<i class="fa-solid fa-hill-rockslide"></i>', '<i class="fa-solid fa-person-hiking"></i>', '<i class="fa-solid fa-person-biking"></i>'],
+    ['<i class="fa-solid fa-person-hiking"></i>', '<i class="fa-solid fa-hill-rockslide"></i>', '<i class="fa-solid fa-person-biking"></i>'],
     ['<i class="fa-solid fa-ghost"></i>', '<i class="fa-solid fa-umbrella-beach"></i>', '<i class="fa-solid fa-icicles"></i>'],
   ],
-  media: [
+  cast: [
     ['<i class="fa-solid fa-photo-film"></i>', '<i class="fa-solid fa-gamepad"></i>', '<i class="fa-solid fa-camera"></i>'],
     ['<i class="fa-solid fa-video"></i>', '<i class="fa-solid fa-person-hiking"></i>', '<i class="fa-solid fa-film"></i>'],
     ['', '', ''],

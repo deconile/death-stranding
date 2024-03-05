@@ -67,14 +67,15 @@
 
 
 /* ABOUT **************************************************/
-#about-purchase {background-image: url("../images/purchase-bg-2.jpg");}
-#about-expanded {background-image: url("../images/cover-expanded.jpg");}
-#about-strand {background-image: url("../images/cover-social-strand.jpg");}
-#about-more {background-image: url("../images/cover-fragile-1.jpg");}
+#about-vids {background-image: url("../images/about-vids.jpg");}
+#about-purchase {background-image: url("../images/purchase-bg-2.jpg");background-position: right bottom;}
+#about-expanded {background-image: url("../images/about-expanded.jpg");}
+#about-strand {background-image: url("../images/about-social-strand.jpg");}
+#about-more {background-image: url("../images/about-more.jpg");}
 
 /* CLOSER ***************************/
 #about-closer {
-    background-image: url("../images/cover-about-closer.jpg");
+    background-image: url("../images/about-closer.jpg");
     background-position:bottom center;
 }
 #about-closer .absolute {max-width:500px;top:40%;left:10%;}
@@ -97,6 +98,6 @@
 
 
 
-/* MEDIA **************************************************/
-#media-hero {background-image: url("../images/media-hero.jpg");}
-#media-vids {background-image: url("../images/media-vids.jpg");}
+/* CAST **************************************************/
+#cast-hero {background-image: url("../images/cast-hero.jpg");}
+#cast-vids {background-image: url("../images/cast-vids.jpg");}

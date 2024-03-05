@@ -6,15 +6,75 @@
         <title>Death Stranding : Community</title>
 
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/components.css">
+        <link rel="stylesheet" href="css/scenes.css">
+        <link rel="stylesheet" href="css/aesthetics.css">
 
         <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/3dd4d3e2df.js" crossorigin="anonymous"></script>
         <script src="js/global.js"></script>
+        <script src="js/interface.js"></script>
+        <script src="js/components.js"></script>
+        <script src="js/invoke.js"></script>
 
     </head>
 
     <body>
 
-        
+        <div id="interface" class="reduce">
+            <!-- top row -->
+            <div>
+                <div class="pip lg"></div>
+            </div>
+            <div></div>
+            <div>
+                <div class="pip lg"></div>
+            </div>
+
+            <!-- middle row -->
+            <div id="left-side" class="flex column gap-sm">
+                <div class="icons stack">
+                    <div class="icon box xs">
+                        <div></div>
+                        <div class="icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div></div>
+                    </div>
+                    <div class="icon box xs">
+                        <div></div>
+                        <div class="icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div></div>
+                    </div>
+                    <div class="icon box xs">
+                        <div></div>
+                        <div class="icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="line anime ver center"></div>
+            </div>
+            <div id="center"></div>
+            <div id="right-side">
+
+                <div class="side-nav">
+                    <div class="progress line ver gutter">
+                        <div class="line ver"></div>
+                    </div>
+                    <div class="nav"></div>
+                </div>
+
+            </div>
+
+            <!-- bottom -->
+            <div>
+                <div class="pip lg stacked mar-b-sm"></div>
+            </div>
+            <div>
+                <div class="pip lg runner-x snail left mar-b-sm"></div>
+            </div>
+            <div>
+                <div class="pip lg stacked mar-b-sm"></div>
+            </div>
+        </div>
 
     </body>
 </html>

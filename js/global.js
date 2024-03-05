@@ -24,8 +24,8 @@ function navBar() {
     $('nav').prepend(`<div class="logo"><img src="images/logos/logo_kojima.png"></div>`);
     $('nav').append(`<ul></ul>`);
 
-    let titles = ['Home','About','Story','Media','Community','Blog'];
-    let urls = ['index.html','about.html','story.html','media.html','community.html','blog.html'];
+    let titles = ['Home','About','Story','Cast','Community','Blog'];
+    let urls = ['index.html','about.html','story.html','cast.html','community.html','blog.html'];
     let page = window.location.href.split('/');
     page = page[page.length - 1];
     
@@ -47,7 +47,7 @@ function hideNavBar() {
 
     if(!autoScrl){
         loc = $(window).scrollTop();
-        if($(window).scrollTop() > wh - 10){
+        if($(window).scrollTop() > wh - 60){
             if(loc >= dir){
                 $('nav').addClass('out');
                 $('#interface').removeClass('reduce');
@@ -192,6 +192,7 @@ function storyReveal(){
                     section.eq(s).find('.frame').css('height',h);
                     section.eq(s).find('.frame').find('.text').css('height',h);
                     section.eq(s).find('.frame').addClass('glitch');
+                    section.eq(s).find('.button').removeClass('out');
                 }
             }
         }
@@ -199,10 +200,14 @@ function storyReveal(){
     if(section.find('.image-reveal').length > 0){
         for(s = 0; s < story.length; s++){
             if($(window).scrollTop() >= story[s] - 100){
-                //IF IT IS A FRAMED CONTAINER
-                if(section.eq(s).find('.out').hasClass('image-reveal')){
-                    section.eq(s).find('.image-reveal').removeClass('out');
-                }
+                section.eq(s).find('.image-reveal').removeClass('out');
+            }
+        }
+    }
+    if(section.find('.button').length > 0){
+        for(s = 0; s < story.length; s++){
+            if($(window).scrollTop() >= story[s] - 100){
+                section.eq(s).find('.button').removeClass('out');
             }
         }
     }

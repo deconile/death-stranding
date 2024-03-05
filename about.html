@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/components.css">
         <link rel="stylesheet" href="css/scenes.css">
         <link rel="stylesheet" href="css/aesthetics.css">
+        <link rel="stylesheet" href="css/video-player.css">
 
         <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/3dd4d3e2df.js" crossorigin="anonymous"></script>
@@ -16,6 +17,7 @@
         <script src="js/interface.js"></script>
         <script src="js/components.js"></script>
         <script src="js/invoke.js"></script>
+        <script src="js/video-player.js"></script>
 
         <style>
             #purchase {background-image: url(images/purchase-bg-2.jpg);}
@@ -103,26 +105,81 @@
                                 <div class="pip md stacked"></div>
                             </div>
                         </div>
-                        <div class="mar-t-lg left">
-                            <div class="button-container">
-                                <div class="button condensed secondary tilt out"><a href="story.html">Continue The Story</a></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="about-vids" class="full snap story">
+            <div class="overlay left">
+                <div class="container right middle half">
+                    <div class="content">
+                        <div class="frame-container">
+                            <div class="frame out">
+                                <div class="pip sm"></div>
+                                <div></div>
+                                <div class="pip lg"></div>
+                                <div></div>
+                                <div class="text">
+                                    <div class="container">
+                                        <h1>Official Trailers</h1>
+                                        <p>Immerse yourself in the world of Death Stranding with our exhibition and release trailers.</p>
+                                    </div>
+                                </div>
+                                <div></div>
+                                <div class="pip md stacked"></div>
+                                <div><div class="pip md runner-x slow"></div></div>
+                                <div class="pip md stacked"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="video-player" class="out">
+
+                    <div class="player">
+                        <div class="frame-container">
+                            <div class="frame-media">
+                                <div class="pip sm"></div>
+                                <div></div>
+                                <div class="pip lg"></div>
+                                <div></div>
+                                <div class="media">
+                                    <div class="container">
+                                        
+                                    </div>
+                                </div>
+                                <div></div>
+                                <div class="pip md stacked"></div>
+                                <div><div class="pip md runner-x slow"></div></div>
+                                <div class="pip md stacked"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog skinny">
+                        <div class="container">
+                            <div class="overflow-container">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <section id="purchase" class="full snap story">
-            <div class="overlay none">
-                <div class="container center middle">
-                    <div class="content condensed">
+            <div class="overlay right">
+                <div class="container right middle">
+                    <div class="content limited">
                         <div class="cols half">
-                            <div class="content-box-container">
-                                <div class="content-box buy tilt" onclick="">
-                                    <div class="label">Death Stranding : Director's Cut</div>
-                                    <div class="image"><img src="images/cover-dc.jpg" /></div>
-                                    <div class="button"><a>Buy Director's Cut</a></div>
+                            <div>
+                                <div class="content-box-container">
+                                    <div class="content-box buy tilt" onclick="">
+                                        <div class="label">Death Stranding : Director's Cut</div>
+                                        <div class="image"><img src="images/cover-dc.jpg" /></div>
+                                        <div class="button"><a>Buy Director's Cut</a></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="frame-container">
@@ -169,6 +226,11 @@
                                 <div class="pip md stacked"></div>
                                 <div><div class="pip md runner-x slow"></div></div>
                                 <div class="pip md stacked"></div>
+                            </div>
+                        </div>
+                        <div class="mar-t-lg left">
+                            <div class="button-container">
+                                <div class="button condensed secondary tilt out"><a href="story.html">Explore More of the Story</a></div>
                             </div>
                         </div>
                     </div>
@@ -232,7 +294,7 @@
                         </div>
                         <div class="mar-t-lg left">
                             <div class="button-container">
-                                <div class="button condensed secondary tilt out"><a href="community.html">Explore More of the Story</a></div>
+                                <div class="button condensed secondary tilt out"><a href="community.html">Explore More</a></div>
                             </div>
                         </div>
                     </div>
